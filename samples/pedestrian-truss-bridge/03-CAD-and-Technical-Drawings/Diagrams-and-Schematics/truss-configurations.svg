@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="960" height="600">
+<title>Truss configurations compared: Pratt, Warren, Howe</title>
+<rect width="960" height="600" fill="#FFFFFF"/>
+<text x="120" y="28" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#18181B">Pratt truss</text>
+<text x="120" y="44" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#52525B">Diagonals slope down toward midspan (tension); verticals in compression. Panels 6 @ 4.0 m.</text>
+<line x1="120" y1="154" x2="792" y2="154" stroke="#18181B" stroke-width="3" stroke-linecap="round"/>
+<line x1="232" y1="70" x2="680" y2="70" stroke="#18181B" stroke-width="3" stroke-linecap="round"/>
+<line x1="120" y1="154" x2="232" y2="70" stroke="#18181B" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="792" y1="154" x2="680" y2="70" stroke="#18181B" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="232" y1="70" x2="232" y2="154" stroke="#18181B" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="344" y1="70" x2="344" y2="154" stroke="#18181B" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="456" y1="70" x2="456" y2="154" stroke="#18181B" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="568" y1="70" x2="568" y2="154" stroke="#18181B" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="680" y1="70" x2="680" y2="154" stroke="#18181B" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="232" y1="70" x2="344" y2="154" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
+<line x1="344" y1="70" x2="456" y2="154" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
+<line x1="680" y1="70" x2="568" y2="154" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
+<line x1="568" y1="70" x2="456" y2="154" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
+<circle cx="120" cy="154" r="4.5" fill="#18181B"/><circle cx="232" cy="154" r="4.5" fill="#18181B"/><circle cx="344" cy="154" r="4.5" fill="#18181B"/><circle cx="456" cy="154" r="4.5" fill="#18181B"/><circle cx="568" cy="154" r="4.5" fill="#18181B"/><circle cx="680" cy="154" r="4.5" fill="#18181B"/><circle cx="792" cy="154" r="4.5" fill="#18181B"/><circle cx="232" cy="70" r="4.5" fill="#18181B"/><circle cx="344" cy="70" r="4.5" fill="#18181B"/><circle cx="456" cy="70" r="4.5" fill="#18181B"/><circle cx="568" cy="70" r="4.5" fill="#18181B"/><circle cx="680" cy="70" r="4.5" fill="#18181B"/>
+<text x="812" y="116" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#52525B">h = 3.0 m</text>
+<text x="120" y="208" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#18181B">Warren truss</text>
+<text x="120" y="224" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#52525B">Alternating diagonals, no verticals. Panels 4 @ 6.0 m (as assessed in ARG-001).</text>
+<line x1="120" y1="334" x2="792" y2="334" stroke="#18181B" stroke-width="3" stroke-linecap="round"/>
+<line x1="204" y1="250" x2="708" y2="250" stroke="#18181B" stroke-width="3" stroke-linecap="round"/>
+<line x1="120" y1="334" x2="204" y2="250" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
+<line x1="204" y1="250" x2="288" y2="334" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
+<line x1="288" y1="334" x2="372" y2="250" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
+<line x1="372" y1="250" x2="456" y2="334" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
+<line x1="456" y1="334" x2="540" y2="250" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
+<line x1="540" y1="250" x2="624" y2="334" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
+<line x1="624" y1="334" x2="708" y2="250" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
+<line x1="708" y1="250" x2="792" y2="334" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
+<circle cx="120" cy="334" r="4.5" fill="#18181B"/><circle cx="288" cy="334" r="4.5" fill="#18181B"/><circle cx="456" cy="334" r="4.5" fill="#18181B"/><circle cx="624" cy="334" r="4.5" fill="#18181B"/><circle cx="792" cy="334" r="4.5" fill="#18181B"/><circle cx="204" cy="250" r="4.5" fill="#18181B"/><circle cx="372" cy="250" r="4.5" fill="#18181B"/><circle cx="540" cy="250" r="4.5" fill="#18181B"/><circle cx="708" cy="250" r="4.5" fill="#18181B"/>
+<text x="812" y="296" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#52525B">h = 3.0 m</text>
+<text x="120" y="388" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#18181B">Howe truss</text>
+<text x="120" y="404" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#52525B">Diagonals slope up toward midspan (compression); verticals in tension. Panels 6 @ 4.0 m.</text>
+<line x1="120" y1="514" x2="792" y2="514" stroke="#18181B" stroke-width="3" stroke-linecap="round"/>
+<line x1="232" y1="430" x2="680" y2="430" stroke="#18181B" stroke-width="3" stroke-linecap="round"/>
+<line x1="120" y1="514" x2="232" y2="430" stroke="#18181B" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="792" y1="514" x2="680" y2="430" stroke="#18181B" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="232" y1="430" x2="232" y2="514" stroke="#18181B" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="344" y1="430" x2="344" y2="514" stroke="#18181B" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="456" y1="430" x2="456" y2="514" stroke="#18181B" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="568" y1="430" x2="568" y2="514" stroke="#18181B" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="680" y1="430" x2="680" y2="514" stroke="#18181B" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="232" y1="514" x2="344" y2="430" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
+<line x1="344" y1="514" x2="456" y2="430" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
+<line x1="680" y1="514" x2="568" y2="430" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
+<line x1="568" y1="514" x2="456" y2="430" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
+<circle cx="120" cy="514" r="4.5" fill="#18181B"/><circle cx="232" cy="514" r="4.5" fill="#18181B"/><circle cx="344" cy="514" r="4.5" fill="#18181B"/><circle cx="456" cy="514" r="4.5" fill="#18181B"/><circle cx="568" cy="514" r="4.5" fill="#18181B"/><circle cx="680" cy="514" r="4.5" fill="#18181B"/><circle cx="792" cy="514" r="4.5" fill="#18181B"/><circle cx="232" cy="430" r="4.5" fill="#18181B"/><circle cx="344" cy="430" r="4.5" fill="#18181B"/><circle cx="456" cy="430" r="4.5" fill="#18181B"/><circle cx="568" cy="430" r="4.5" fill="#18181B"/><circle cx="680" cy="430" r="4.5" fill="#18181B"/>
+<text x="812" y="476" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#52525B">h = 3.0 m</text>
+<text x="120" y="580" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#71717A">Schematic elevations, not to scale for member sizes. Educational sample - NOT FOR CONSTRUCTION.</text>
+</svg>

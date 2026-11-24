@@ -1,0 +1,113 @@
+@import 'tailwindcss';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+
+/* FrameLytix design tokens. Use these utility names everywhere (bg-obsidian, text-silver, border-gunmetal …). */
+@theme {
+  --color-obsidian: #09090b;
+  --color-carbon: #121215;
+  --color-matte: #1a1a1f;
+  --color-raised: #222228;
+  --color-crimson: #dc2626;
+  --color-crimson-hover: #ef4444;
+  --color-crimson-active: #991b1b;
+  --color-gunmetal: #27272a;
+  --color-steel: #3f3f46;
+  --color-white: #fafafa;
+  --color-silver: #a1a1aa;
+  --color-dim: #71717a;
+  --color-amber: #f59e0b;
+  --color-emerald: #10b981;
+  --color-info: #60a5fa;
+
+  --font-sans: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Mono', Consolas, monospace;
+
+  --text-2xs: 0.6875rem;
+  --text-2xs--line-height: 1rem;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    background: var(--color-obsidian);
+    color: var(--color-white);
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    user-select: none;
+  }
+  input,
+  textarea,
+  select,
+  [contenteditable='true'],
+  .selectable {
+    user-select: text;
+  }
+  ::selection {
+    background: rgb(220 38 38 / 0.4);
+  }
+  *:focus-visible {
+    outline: 2px solid var(--color-crimson-hover);
+    outline-offset: 1px;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-gunmetal);
+    border: 2px solid var(--color-obsidian);
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-steel);
+  }
+  table {
+    border-collapse: collapse;
+  }
+}
+
+/* Reduced motion: honoured from the OS and from the in-app setting (html.reduce-motion). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+html.reduce-motion *,
+html.reduce-motion *::before,
+html.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* Technical grid backdrop used on the welcome screen. */
+.bg-tech-grid {
+  background-image:
+    linear-gradient(to right, rgb(39 39 42 / 0.45) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(39 39 42 / 0.45) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* KaTeX output inherits app colours. */
+.katex {
+  font-size: 1.1em;
+  color: var(--color-white);
+}

@@ -1,0 +1,49 @@
+name: Feature request
+description: Suggest an improvement to FrameLytix
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a feature. Please check the out-of-scope list below first. FrameLytix is an
+        offline-first desktop tool, and some kinds of feature are deliberately excluded.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What engineering workflow is hard or impossible today? Describe the situation, not only the solution.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Describe how you would like FrameLytix to behave.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Other tools, manual workarounds or existing features you have tried.
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Engineering workflow context
+      description: |
+        Which phase of the workflow does this affect (define the project, requirements, alternatives,
+        calculations, justification, technical assets, completeness review, or export)? Who uses it (for
+        example a capstone team, a design team or a competition team)?
+    validations:
+      required: true
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      description: Please confirm the following.
+      options:
+        - label: I have checked that this request does not ask for an out-of-scope item (cloud sync, AI chat, CAD editing, FEA or structural solvers, accounts, telemetry, or network features at runtime).
+          required: true
+        - label: I understand that FrameLytix is a documentation and decision-support tool and not certified engineering software.
+          required: true
