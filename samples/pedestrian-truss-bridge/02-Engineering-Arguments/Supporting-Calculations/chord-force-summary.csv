@@ -1,0 +1,7 @@
+quantity,symbol,expression,value,unit,note
+Line load,w,q*b,10.0,kN/m,q = 4.0 kPa (illustrative); b = 2.5 m
+Midspan moment,M_max,w*L^2/8,720.0,kN.m,L = 24.0 m simply supported
+Support reaction (each end),R,w*L/2,120.0,kN,Equal at both supports
+Chord force,F,M_max/h,240.0,kN,h = 3.0 m; whole-bridge couple (simplified)
+Allowable stress,sigma_allow,assumed,150.0,MPa,Illustrative assumption
+Required chord area,A_req,F*1000/sigma_allow,1600.0,mm2,Conceptual only

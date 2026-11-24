@@ -1,0 +1,15 @@
+PEDESTRIAN TRUSS BRIDGE - INTERNAL DESIGN REVIEW NOTES (EDUCATIONAL SAMPLE)
+Date: 2026-11-24    Reviewer: Sample Reviewer    Drawing reviewed: DRW-001 REV-B
+
+This is a fictional sample. Nothing here is professional engineering advice.
+
+1. Geometry in the GA drawing, STL concept model and calculations is consistent:
+   Pratt truss, L = 24.0 m, 6 x 4.0 m panels, h = 3.0 m, trusses at 2.9 m centres.
+2. The 4.0 kPa live load is an illustrative assumption. It has NOT been confirmed
+   against any governing code (see RSK-001). This is the largest open item.
+3. Warren scored highest numerically in ARG-001 but fails mandatory REQ-004
+   (6.0 m panels exceed 4.0 m floor-beam spacing). Pratt is retained, provisionally.
+4. Deflection and vibration limits (REQ-006) are not yet defined or checked.
+5. Deck system (ARG-003) and connection method (ARG-004) are incomplete.
+6. Next actions: confirm governing code and loads; define serviceability limits;
+   complete ARG-003 scoring; resolve REQ-010 traceability.

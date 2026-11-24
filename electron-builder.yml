@@ -1,0 +1,46 @@
+# FrameLytix packaging. Unsigned builds; never publishes. No signing secrets here.
+appId: io.github.framelytix.desktop
+productName: FrameLytix
+copyright: Copyright © FrameLytix contributors
+directories:
+  output: release
+  buildResources: build
+files:
+  - out/**
+  - package.json
+  - '!**/*.map'
+asar: true
+extraResources:
+  - from: samples
+    to: samples
+  - from: THIRD_PARTY_NOTICES.md
+    to: THIRD_PARTY_NOTICES.md
+  - from: LICENSE
+    to: LICENSE
+  - from: build/icons
+    to: icons
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: build/icons/icon.ico
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  perMachine: false
+  artifactName: FrameLytix-Setup-${version}-${arch}.exe
+  createDesktopShortcut: true
+  shortcutName: FrameLytix
+mac:
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+  category: public.app-category.developer-tools
+  icon: build/icons/icon.png
+  hardenedRuntime: false
+  identity: null
+  artifactName: FrameLytix-${version}-${arch}.dmg
+publish: null

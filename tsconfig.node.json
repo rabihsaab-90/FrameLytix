@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023"],
+    "types": ["node"]
+  },
+  "include": [
+    "electron/**/*.ts",
+    "shared/**/*.ts",
+    "src/templates/**/*.ts",
+    "src/config/**/*.ts",
+    "tests/unit/**/*.ts",
+    "tests/integration/**/*.ts",
+    "tests/e2e/**/*.ts",
+    "electron.vite.config.ts",
+    "vitest.config.mts",
+    "playwright.config.ts"
+  ]
+}

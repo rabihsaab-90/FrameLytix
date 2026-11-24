@@ -1,0 +1,77 @@
+name: Bug report
+description: Report a defect in FrameLytix
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a defect. Please do **not** report security vulnerabilities here. Follow the
+        security policy in SECURITY.md instead.
+
+        Do not attach private project data. Use a minimal example with invented values where possible.
+  - type: input
+    id: app-version
+    attributes:
+      label: FrameLytix version
+      description: Shown in the application's About dialog, or the version in package.json for development builds.
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: os-name
+    attributes:
+      label: Operating system
+      options:
+        - Windows 11
+        - Windows 10
+        - macOS
+        - Other (specify below)
+    validations:
+      required: true
+  - type: input
+    id: os-version
+    attributes:
+      label: Operating system version and build
+      description: For example, "Windows 11 version 24H2 (build 26100)" or "macOS 15.2".
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Numbered steps that start from launching FrameLytix.
+      placeholder: |
+        1. Open the bundled sample project
+        2. Go to Requirements
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+      description: Describe what happened, including any error message shown on screen.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: |
+        Paste relevant log output or error text inside a code block. Remove personal data (names, email
+        addresses, file paths containing your name) and any project contents before posting.
+      render: shell
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: I have removed personal data from this report, and I have not attached private project data, client information or confidential designs.
+          required: true

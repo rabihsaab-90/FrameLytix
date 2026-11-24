@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+
+# Build output
+out/
+dist/
+release/
+*.tsbuildinfo
+
+# Test output
+coverage/
+playwright-report/
+test-results/
+blob-report/
+.vitest/
+
+# Logs and temporary files
+*.log
+npm-debug.log*
+*.tmp
+*.temp
+.cache/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+*.key
+
+# Editor and OS metadata
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local Claude Code permission and session files
+.claude/settings.local.json
+.claude/*.local.*
+
+# User-generated engineering projects and private backups (never commit personal data).
+# The bundled sample in samples/ is intentionally tracked.
+/projects/
+/FrameLytix Projects/
+**/.framelytix/backups/*
+!samples/**/.framelytix/backups/.gitkeep
+**/.framelytix/lock.json

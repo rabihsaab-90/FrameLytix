@@ -1,0 +1,2134 @@
+{
+  "schemaVersion": 1,
+  "appVersion": "0.1.0",
+  "project": {
+    "id": "7bd88bf0-44b3-5a34-84c9-61dc85fcabd4",
+    "title": "Pedestrian Truss Bridge — Conceptual Design Study",
+    "description": "Fictional educational sample bundled with FrameLytix: a conceptual Pratt through-truss footbridge, 24.0 m clear span, used to demonstrate requirements, decision matrices, calculations and traceability.",
+    "identifier": "PTB-2026",
+    "discipline": "civil",
+    "disciplineLabel": "Civil Engineering",
+    "templateId": "civil-bridge",
+    "archetypeName": "Bridge Design",
+    "templateVersion": "1.0.0",
+    "author": "FrameLytix Sample Team",
+    "organization": "Educational sample (fictional project)",
+    "unitSystem": "SI",
+    "scope": "This is an educational conceptual study of a fictional 24.0 m pedestrian through-truss bridge. It demonstrates how FrameLytix records requirements, compares alternatives, documents calculations and traces evidence. All loads, limits and stresses are illustrative assumptions. It is not a professional design, has not been checked against any code and is NOT construction-ready.",
+    "summary": "A fictional Pratt truss footbridge (6 panels x 4.0 m, 3.0 m deep, 2.5 m clear width) is used as a worked example. Under an illustrative 4.0 kPa load the line load is 10.0 kN/m, the midspan moment 720 kN·m, each reaction 120 kN and the conceptual chord force 240 kN. Warren scores highest in the truss decision matrix but fails a mandatory constraint, so Pratt is provisionally recommended. Several items remain open on purpose. This sample is not a professional design, is not checked against any code and is NOT FOR CONSTRUCTION.",
+    "sectionLabels": {
+      "criteria": "Design Criteria",
+      "constraints": "Load and Safety Constraints",
+      "environment": "Site and Environment Data"
+    },
+    "isSample": true,
+    "createdAt": "2026-11-10T09:00:00.000Z",
+    "modifiedAt": "2026-11-24T09:30:00.000Z"
+  },
+  "folders": [
+    "01-Scope-and-Requirements/Design-Criteria",
+    "01-Scope-and-Requirements/Load-and-Safety-Constraints",
+    "01-Scope-and-Requirements/Site-and-Environment",
+    "02-Engineering-Arguments/Material-Selection",
+    "02-Engineering-Arguments/Truss-Configuration",
+    "02-Engineering-Arguments/Supporting-Calculations",
+    "03-CAD-and-Technical-Drawings/AutoCAD-2D",
+    "03-CAD-and-Technical-Drawings/3D-Models",
+    "03-CAD-and-Technical-Drawings/Diagrams-and-Schematics",
+    "04-Design-Review-and-Export/Review-Documents",
+    "04-Design-Review-and-Export/Reports"
+  ],
+  "requirements": [
+    {
+      "id": "0c30cd36-baf0-5199-b0c7-a278d24465c5",
+      "code": "REQ-001",
+      "title": "Minimum clear span of 24.0 m",
+      "description": "The bridge shall provide a clear span of at least 24.0 m between abutment faces to cross the creek channel.",
+      "section": "criteria",
+      "category": "Geometry",
+      "priority": "high",
+      "classification": "mandatory",
+      "acceptanceCriterion": "Clear span measured between abutment faces is not less than 24.0 m.",
+      "targetValue": "24.0",
+      "unit": "m",
+      "source": "Site sketch (fictional)",
+      "verificationMethod": "document-review",
+      "status": "verified",
+      "verificationNotes": "Span of 24.0 m measured from the illustrative site sketch (IMG-001) and confirmed against the general arrangement drawing DRW-001 REV-B.",
+      "notes": "",
+      "notApplicableLinks": {
+        "argument": "",
+        "calculation": "",
+        "asset": ""
+      },
+      "archived": false,
+      "createdAt": "2026-11-10T09:00:00.000Z",
+      "modifiedAt": "2026-11-18T14:00:00.000Z"
+    },
+    {
+      "id": "2a3e8da7-ec6e-5f27-90af-4791346ca9e2",
+      "code": "REQ-002",
+      "title": "Pedestrian live-load capacity",
+      "description": "Design for an illustrative uniformly distributed pedestrian live load of 4.0 kPa. This value is an ASSUMPTION for the educational study and is not taken from any code.",
+      "section": "constraints",
+      "category": "Loads",
+      "priority": "high",
+      "classification": "mandatory",
+      "acceptanceCriterion": "Members sized so that the conceptual chord force check passes under 4.0 kPa (illustrative). Governing code loads to be confirmed.",
+      "targetValue": "4.0",
+      "unit": "kPa",
+      "source": "Team assumption (illustrative)",
+      "verificationMethod": "calculation",
+      "status": "in-progress",
+      "verificationNotes": "",
+      "notes": "Load assumption not yet confirmed against the governing code; see RSK-001.",
+      "notApplicableLinks": {
+        "argument": "",
+        "calculation": "",
+        "asset": ""
+      },
+      "archived": false,
+      "createdAt": "2026-11-10T09:00:00.000Z",
+      "modifiedAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "7d41f83c-564e-596a-8c33-a28a14cada44",
+      "code": "REQ-003",
+      "title": "Clear deck width of at least 2.5 m",
+      "description": "The walking surface shall provide at least 2.5 m clear width between truss inner faces.",
+      "section": "criteria",
+      "category": "Geometry",
+      "priority": "high",
+      "classification": "mandatory",
+      "acceptanceCriterion": "Clear deck width is not less than 2.5 m.",
+      "targetValue": "2.5",
+      "unit": "m",
+      "source": "Project brief (fictional)",
+      "verificationMethod": "inspection",
+      "status": "verified",
+      "verificationNotes": "Clear width of 2.5 m between curbs confirmed on the cross-section of DRW-001 REV-B (trusses at 2.9 m centres).",
+      "notes": "",
+      "notApplicableLinks": {
+        "argument": "",
+        "calculation": "",
+        "asset": ""
+      },
+      "archived": false,
+      "createdAt": "2026-11-10T09:00:00.000Z",
+      "modifiedAt": "2026-11-18T14:00:00.000Z"
+    },
+    {
+      "id": "561ff441-cf3b-5fde-87da-38f871879087",
+      "code": "REQ-004",
+      "title": "Maximum floor-beam spacing of 4.0 m",
+      "description": "Floor-beam spacing shall not exceed 4.0 m to suit the selected deck panel span.",
+      "section": "constraints",
+      "category": "Structure",
+      "priority": "high",
+      "classification": "mandatory",
+      "acceptanceCriterion": "Floor beams at every panel point with spacing not greater than 4.0 m.",
+      "targetValue": "4.0",
+      "unit": "m",
+      "source": "Deck panel capacity (assumed)",
+      "verificationMethod": "inspection",
+      "status": "verified",
+      "verificationNotes": "Inspection of DRW-001 REV-B shows 6 panels at 4.0 m with a floor beam at each panel point (VER-003).",
+      "notes": "",
+      "notApplicableLinks": {
+        "argument": "",
+        "calculation": "",
+        "asset": ""
+      },
+      "archived": false,
+      "createdAt": "2026-11-10T09:00:00.000Z",
+      "modifiedAt": "2026-11-18T14:00:00.000Z"
+    },
+    {
+      "id": "5b663e8e-5e99-55a2-9c02-37e3723458d4",
+      "code": "REQ-005",
+      "title": "Corrosion protection for de-icing-salt exposure",
+      "description": "The structure shall have corrosion protection suitable for an environment exposed to de-icing salts.",
+      "section": "environment",
+      "category": "Durability",
+      "priority": "high",
+      "classification": "mandatory",
+      "acceptanceCriterion": "Selected material and protection system judged suitable for de-icing-salt exposure by the team; to be confirmed by a qualified engineer.",
+      "targetValue": "",
+      "unit": "",
+      "source": "Project brief (fictional)",
+      "verificationMethod": "analysis",
+      "status": "in-progress",
+      "verificationNotes": "",
+      "notes": "Material selection (ARG-002) done; protection strategy (ARG-005) needs revision.",
+      "notApplicableLinks": {
+        "argument": "",
+        "calculation": "",
+        "asset": ""
+      },
+      "archived": false,
+      "createdAt": "2026-11-10T09:00:00.000Z",
+      "modifiedAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "5b45658f-caef-58db-8d5a-b0e3e3426be1",
+      "code": "REQ-006",
+      "title": "Serviceability deflection limit (to be confirmed)",
+      "description": "Mid-span deflection under pedestrian load shall be limited. The limit is to be confirmed against the governing code; no value is assumed here.",
+      "section": "constraints",
+      "category": "Serviceability",
+      "priority": "high",
+      "classification": "mandatory",
+      "acceptanceCriterion": "Limit to be confirmed against the governing code.",
+      "targetValue": "",
+      "unit": "",
+      "source": "Project brief (fictional)",
+      "verificationMethod": "analysis",
+      "status": "not-started",
+      "verificationNotes": "",
+      "notes": "UNVERIFIED mandatory constraint. Deflection and vibration have not been checked.",
+      "notApplicableLinks": {
+        "argument": "",
+        "calculation": "",
+        "asset": ""
+      },
+      "archived": false,
+      "createdAt": "2026-11-10T09:00:00.000Z",
+      "modifiedAt": "2026-11-14T10:30:00.000Z"
+    },
+    {
+      "id": "1028da41-b4d8-5ff9-8ba9-c8fcde4e7983",
+      "code": "REQ-007",
+      "title": "Minimize life-cycle maintenance",
+      "description": "Prefer solutions that reduce inspection and repainting effort over the service life.",
+      "section": "criteria",
+      "category": "Durability",
+      "priority": "medium",
+      "classification": "objective",
+      "acceptanceCriterion": "Maintenance burden compared qualitatively between alternatives.",
+      "targetValue": "",
+      "unit": "",
+      "source": "Project brief (fictional)",
+      "verificationMethod": "document-review",
+      "status": "not-started",
+      "verificationNotes": "",
+      "notes": "",
+      "notApplicableLinks": {
+        "argument": "",
+        "calculation": "",
+        "asset": ""
+      },
+      "archived": false,
+      "createdAt": "2026-11-10T09:00:00.000Z",
+      "modifiedAt": "2026-11-14T10:30:00.000Z"
+    },
+    {
+      "id": "e716ba55-4ef2-581d-b51e-699649704be0",
+      "code": "REQ-008",
+      "title": "Prefer road-transportable prefabricated modules",
+      "description": "Prefabricated truss modules that can be moved by road are preferred to reduce on-site work.",
+      "section": "criteria",
+      "category": "Construction",
+      "priority": "low",
+      "classification": "preference",
+      "acceptanceCriterion": "Modules fit within typical road transport envelopes (to be confirmed).",
+      "targetValue": "",
+      "unit": "",
+      "source": "Project brief (fictional)",
+      "verificationMethod": "document-review",
+      "status": "not-started",
+      "verificationNotes": "",
+      "notes": "",
+      "notApplicableLinks": {
+        "argument": "",
+        "calculation": "",
+        "asset": ""
+      },
+      "archived": false,
+      "createdAt": "2026-11-10T09:00:00.000Z",
+      "modifiedAt": "2026-11-14T10:30:00.000Z"
+    },
+    {
+      "id": "36155b53-32be-5afd-8842-1a2ad38a0b4c",
+      "code": "REQ-009",
+      "title": "Accessible approach slopes",
+      "description": "Approach paths at both abutments should provide gentle slopes suitable for wheelchair and stroller use.",
+      "section": "environment",
+      "category": "Accessibility",
+      "priority": "medium",
+      "classification": "objective",
+      "acceptanceCriterion": "Approach slopes to be set against the governing accessibility guidance (to be confirmed).",
+      "targetValue": "",
+      "unit": "",
+      "source": "Project brief (fictional)",
+      "verificationMethod": "document-review",
+      "status": "in-progress",
+      "verificationNotes": "",
+      "notes": "",
+      "notApplicableLinks": {
+        "argument": "",
+        "calculation": "",
+        "asset": ""
+      },
+      "archived": false,
+      "createdAt": "2026-11-10T09:00:00.000Z",
+      "modifiedAt": "2026-11-18T14:00:00.000Z"
+    },
+    {
+      "id": "ea598961-fc19-5418-8c8a-afa1b04d3620",
+      "code": "REQ-010",
+      "title": "Aesthetic integration with park setting",
+      "description": "The structure should sit comfortably in the surrounding park landscape.",
+      "section": "environment",
+      "category": "Aesthetics",
+      "priority": "low",
+      "classification": "preference",
+      "acceptanceCriterion": "Qualitative review of finish and colour with the park owner.",
+      "targetValue": "",
+      "unit": "",
+      "source": "Project brief (fictional)",
+      "verificationMethod": "other",
+      "status": "not-started",
+      "verificationNotes": "",
+      "notes": "",
+      "notApplicableLinks": {
+        "argument": "",
+        "calculation": "",
+        "asset": ""
+      },
+      "archived": false,
+      "createdAt": "2026-11-10T09:00:00.000Z",
+      "modifiedAt": "2026-11-14T10:30:00.000Z"
+    }
+  ],
+  "arguments": [
+    {
+      "id": "cb98648b-4623-5927-8bd4-5f3070298cc5",
+      "code": "ARG-001",
+      "title": "Truss Configuration Selection",
+      "problemStatement": "Select a truss configuration for a 24.0 m pedestrian through-truss that works with 4.0 m deck panels.",
+      "objective": "Choose the configuration that best balances cost, strength and feasibility while meeting all mandatory constraints.",
+      "alternatives": [
+        {
+          "id": "39959ba8-9014-55ab-881a-f2375513feeb",
+          "name": "Pratt truss",
+          "description": "Verticals in compression, diagonals in tension sloping toward midspan; 6 panels at 4.0 m."
+        },
+        {
+          "id": "e8e88152-5fc2-50d0-8ab7-a0a0669a21d0",
+          "name": "Warren truss",
+          "description": "No verticals, alternating diagonals; 4 panels at 6.0 m."
+        },
+        {
+          "id": "4110250c-d28c-524b-b84e-d354d06d6c14",
+          "name": "Howe truss",
+          "description": "Diagonals in compression sloping away from midspan; verticals in tension; 6 panels at 4.0 m."
+        }
+      ],
+      "matrix": {
+        "scaleMin": 1,
+        "scaleMax": 5,
+        "criteria": [
+          {
+            "id": "3f6ce726-c15a-54f8-97db-0a9e3f0c4018",
+            "name": "Cost",
+            "weight": 30,
+            "description": "Initial cost; higher score = lower cost"
+          },
+          {
+            "id": "d56d4263-762c-5661-b2db-b18f763e252c",
+            "name": "Safety or Strength",
+            "weight": 40,
+            "description": "Structural robustness and safety margin"
+          },
+          {
+            "id": "9775512f-c5c8-5bc9-8574-c191d8d0885c",
+            "name": "Feasibility",
+            "weight": 30,
+            "description": "Constructability, fabrication and transport"
+          }
+        ],
+        "scores": [
+          {
+            "alternativeId": "39959ba8-9014-55ab-881a-f2375513feeb",
+            "criterionId": "3f6ce726-c15a-54f8-97db-0a9e3f0c4018",
+            "score": 3,
+            "rationale": "More members than a Warren truss, so somewhat higher fabrication cost."
+          },
+          {
+            "alternativeId": "39959ba8-9014-55ab-881a-f2375513feeb",
+            "criterionId": "d56d4263-762c-5661-b2db-b18f763e252c",
+            "score": 4,
+            "rationale": "Slender tension diagonals; short compression verticals; well-understood load path."
+          },
+          {
+            "alternativeId": "39959ba8-9014-55ab-881a-f2375513feeb",
+            "criterionId": "9775512f-c5c8-5bc9-8574-c191d8d0885c",
+            "score": 4,
+            "rationale": "Panel points match the 4.0 m deck panel module; modular shop fabrication."
+          },
+          {
+            "alternativeId": "e8e88152-5fc2-50d0-8ab7-a0a0669a21d0",
+            "criterionId": "3f6ce726-c15a-54f8-97db-0a9e3f0c4018",
+            "score": 5,
+            "rationale": "Fewest members and joints, so lowest cost."
+          },
+          {
+            "alternativeId": "e8e88152-5fc2-50d0-8ab7-a0a0669a21d0",
+            "criterionId": "d56d4263-762c-5661-b2db-b18f763e252c",
+            "score": 4,
+            "rationale": "Efficient load path, but longer unbraced members."
+          },
+          {
+            "alternativeId": "e8e88152-5fc2-50d0-8ab7-a0a0669a21d0",
+            "criterionId": "9775512f-c5c8-5bc9-8574-c191d8d0885c",
+            "score": 4,
+            "rationale": "Simple to fabricate, but 6.0 m panels do not suit the deck module."
+          },
+          {
+            "alternativeId": "4110250c-d28c-524b-b84e-d354d06d6c14",
+            "criterionId": "3f6ce726-c15a-54f8-97db-0a9e3f0c4018",
+            "score": 3,
+            "rationale": "Similar member count to Pratt."
+          },
+          {
+            "alternativeId": "4110250c-d28c-524b-b84e-d354d06d6c14",
+            "criterionId": "d56d4263-762c-5661-b2db-b18f763e252c",
+            "score": 3,
+            "rationale": "Long diagonals in compression need buckling attention."
+          },
+          {
+            "alternativeId": "4110250c-d28c-524b-b84e-d354d06d6c14",
+            "criterionId": "9775512f-c5c8-5bc9-8574-c191d8d0885c",
+            "score": 3,
+            "rationale": "Less common for steel; less familiar detailing."
+          }
+        ]
+      },
+      "constraintEvaluations": [
+        {
+          "alternativeId": "39959ba8-9014-55ab-881a-f2375513feeb",
+          "requirementId": "0c30cd36-baf0-5199-b0c7-a278d24465c5",
+          "result": "pass",
+          "justification": "Spans 24.0 m by geometry."
+        },
+        {
+          "alternativeId": "39959ba8-9014-55ab-881a-f2375513feeb",
+          "requirementId": "561ff441-cf3b-5fde-87da-38f871879087",
+          "result": "pass",
+          "justification": "Floor beams at 4.0 m panel points (see DRW-001)."
+        },
+        {
+          "alternativeId": "39959ba8-9014-55ab-881a-f2375513feeb",
+          "requirementId": "5b45658f-caef-58db-8d5a-b0e3e3426be1",
+          "result": "unverified",
+          "justification": "Deflection limit not yet defined or checked."
+        },
+        {
+          "alternativeId": "e8e88152-5fc2-50d0-8ab7-a0a0669a21d0",
+          "requirementId": "0c30cd36-baf0-5199-b0c7-a278d24465c5",
+          "result": "pass",
+          "justification": "Spans 24.0 m by geometry."
+        },
+        {
+          "alternativeId": "e8e88152-5fc2-50d0-8ab7-a0a0669a21d0",
+          "requirementId": "561ff441-cf3b-5fde-87da-38f871879087",
+          "result": "fail",
+          "justification": "6.0 m panels exceed the 4.0 m floor-beam spacing needed by the deck."
+        },
+        {
+          "alternativeId": "e8e88152-5fc2-50d0-8ab7-a0a0669a21d0",
+          "requirementId": "5b45658f-caef-58db-8d5a-b0e3e3426be1",
+          "result": "unverified",
+          "justification": "Deflection limit not yet defined or checked."
+        },
+        {
+          "alternativeId": "4110250c-d28c-524b-b84e-d354d06d6c14",
+          "requirementId": "0c30cd36-baf0-5199-b0c7-a278d24465c5",
+          "result": "pass",
+          "justification": "Spans 24.0 m by geometry."
+        },
+        {
+          "alternativeId": "4110250c-d28c-524b-b84e-d354d06d6c14",
+          "requirementId": "561ff441-cf3b-5fde-87da-38f871879087",
+          "result": "pass",
+          "justification": "Floor beams at 4.0 m panel points."
+        },
+        {
+          "alternativeId": "4110250c-d28c-524b-b84e-d354d06d6c14",
+          "requirementId": "5b45658f-caef-58db-8d5a-b0e3e3426be1",
+          "result": "unverified",
+          "justification": "Deflection limit not yet defined or checked."
+        }
+      ],
+      "assumptions": [
+        "Truss depth is fixed at 3.0 m for all alternatives.",
+        "Deck sits at the bottom chord (through truss) with floor beams at panel points.",
+        "Scores are team judgements on a 1 to 5 scale; higher is always more favourable (including cost)."
+      ],
+      "evidenceSummary": "See CALC-004 for the chord force, DIA-001 for the configurations and MOD-001 for the concept model. No structural analysis of the alternatives has been performed.",
+      "selectedAlternativeId": "39959ba8-9014-55ab-881a-f2375513feeb",
+      "selectionRationale": "Warren has the highest weighted score (4.3) but fails mandatory REQ-004 and is therefore ineligible. Pratt (3.7) is the highest-scoring eligible alternative, provisionally, because REQ-006 is still unverified.",
+      "justification": "Warren scores highest numerically (4.3 versus 3.7 for Pratt and 3.0 for Howe), mainly on cost. However its 6.0 m panels exceed the 4.0 m floor-beam spacing required by the deck (REQ-004), which is a mandatory constraint, so it is ineligible regardless of score. Pratt and Howe both meet REQ-001 and REQ-004; Pratt scores higher. The selection is provisional: the serviceability deflection limit (REQ-006) has not been confirmed or verified for any alternative.",
+      "risksAndLimitations": "Scores are subjective team judgements. No analysis of deflection, vibration or member buckling has been done. A change to the deck module could reopen this decision.",
+      "references": [
+        "Course notes — introductory structural analysis",
+        "Manufacturer literature (to be obtained)"
+      ],
+      "author": "FrameLytix Sample Team",
+      "reviewer": "Sample Reviewer",
+      "revision": "REV-B",
+      "status": "under-review",
+      "archived": false,
+      "createdAt": "2026-11-14T10:30:00.000Z",
+      "modifiedAt": "2026-11-24T09:30:00.000Z",
+      "revisions": [
+        {
+          "id": "94e64a75-8729-5e08-8366-dea00df988dd",
+          "code": "REV-A",
+          "timestamp": "2026-11-18T14:00:00.000Z",
+          "author": "FrameLytix Sample Team",
+          "summary": "Added mandatory constraint evaluations; Warren found to fail REQ-004; selection changed to Pratt",
+          "snapshot": {
+            "id": "cb98648b-4623-5927-8bd4-5f3070298cc5",
+            "code": "ARG-001",
+            "title": "Truss Configuration Selection",
+            "problemStatement": "Select a truss configuration for a 24.0 m pedestrian through-truss that works with 4.0 m deck panels.",
+            "objective": "Choose the configuration that best balances cost, strength and feasibility while meeting all mandatory constraints.",
+            "alternatives": [
+              {
+                "id": "39959ba8-9014-55ab-881a-f2375513feeb",
+                "name": "Pratt truss",
+                "description": "Verticals in compression, diagonals in tension sloping toward midspan; 6 panels at 4.0 m."
+              },
+              {
+                "id": "e8e88152-5fc2-50d0-8ab7-a0a0669a21d0",
+                "name": "Warren truss",
+                "description": "No verticals, alternating diagonals; 4 panels at 6.0 m."
+              },
+              {
+                "id": "4110250c-d28c-524b-b84e-d354d06d6c14",
+                "name": "Howe truss",
+                "description": "Diagonals in compression sloping away from midspan; verticals in tension; 6 panels at 4.0 m."
+              }
+            ],
+            "matrix": {
+              "scaleMin": 1,
+              "scaleMax": 5,
+              "criteria": [
+                {
+                  "id": "3f6ce726-c15a-54f8-97db-0a9e3f0c4018",
+                  "name": "Cost",
+                  "weight": 30,
+                  "description": "Initial cost; higher score = lower cost"
+                },
+                {
+                  "id": "d56d4263-762c-5661-b2db-b18f763e252c",
+                  "name": "Safety or Strength",
+                  "weight": 40,
+                  "description": "Structural robustness and safety margin"
+                },
+                {
+                  "id": "9775512f-c5c8-5bc9-8574-c191d8d0885c",
+                  "name": "Feasibility",
+                  "weight": 30,
+                  "description": "Constructability, fabrication and transport"
+                }
+              ],
+              "scores": [
+                {
+                  "alternativeId": "39959ba8-9014-55ab-881a-f2375513feeb",
+                  "criterionId": "3f6ce726-c15a-54f8-97db-0a9e3f0c4018",
+                  "score": 3,
+                  "rationale": "More members than a Warren truss, so somewhat higher fabrication cost."
+                },
+                {
+                  "alternativeId": "39959ba8-9014-55ab-881a-f2375513feeb",
+                  "criterionId": "d56d4263-762c-5661-b2db-b18f763e252c",
+                  "score": 4,
+                  "rationale": "Slender tension diagonals; short compression verticals; well-understood load path."
+                },
+                {
+                  "alternativeId": "39959ba8-9014-55ab-881a-f2375513feeb",
+                  "criterionId": "9775512f-c5c8-5bc9-8574-c191d8d0885c",
+                  "score": 4,
+                  "rationale": "Panel points match the 4.0 m deck panel module; modular shop fabrication."
+                },
+                {
+                  "alternativeId": "e8e88152-5fc2-50d0-8ab7-a0a0669a21d0",
+                  "criterionId": "3f6ce726-c15a-54f8-97db-0a9e3f0c4018",
+                  "score": 5,
+                  "rationale": "Fewest members and joints, so lowest cost."
+                },
+                {
+                  "alternativeId": "e8e88152-5fc2-50d0-8ab7-a0a0669a21d0",
+                  "criterionId": "d56d4263-762c-5661-b2db-b18f763e252c",
+                  "score": 4,
+                  "rationale": "Efficient load path, but longer unbraced members."
+                },
+                {
+                  "alternativeId": "e8e88152-5fc2-50d0-8ab7-a0a0669a21d0",
+                  "criterionId": "9775512f-c5c8-5bc9-8574-c191d8d0885c",
+                  "score": 4,
+                  "rationale": "Simple to fabricate, but 6.0 m panels do not suit the deck module."
+                },
+                {
+                  "alternativeId": "4110250c-d28c-524b-b84e-d354d06d6c14",
+                  "criterionId": "3f6ce726-c15a-54f8-97db-0a9e3f0c4018",
+                  "score": 3,
+                  "rationale": "Similar member count to Pratt."
+                },
+                {
+                  "alternativeId": "4110250c-d28c-524b-b84e-d354d06d6c14",
+                  "criterionId": "d56d4263-762c-5661-b2db-b18f763e252c",
+                  "score": 3,
+                  "rationale": "Long diagonals in compression need buckling attention."
+                },
+                {
+                  "alternativeId": "4110250c-d28c-524b-b84e-d354d06d6c14",
+                  "criterionId": "9775512f-c5c8-5bc9-8574-c191d8d0885c",
+                  "score": 3,
+                  "rationale": "Less common for steel; less familiar detailing."
+                }
+              ]
+            },
+            "constraintEvaluations": [],
+            "assumptions": [
+              "Truss depth is fixed at 3.0 m for all alternatives.",
+              "Deck sits at the bottom chord (through truss) with floor beams at panel points.",
+              "Scores are team judgements on a 1 to 5 scale; higher is always more favourable (including cost)."
+            ],
+            "evidenceSummary": "See CALC-004 for the chord force, DIA-001 for the configurations and MOD-001 for the concept model. No structural analysis of the alternatives has been performed.",
+            "selectedAlternativeId": "e8e88152-5fc2-50d0-8ab7-a0a0669a21d0",
+            "selectionRationale": "",
+            "justification": "Warren has the highest weighted score and is the cheapest option, so it is preferred at this stage.",
+            "risksAndLimitations": "Mandatory constraints have not yet been evaluated against the alternatives.",
+            "references": [
+              "Course notes — introductory structural analysis",
+              "Manufacturer literature (to be obtained)"
+            ],
+            "author": "FrameLytix Sample Team",
+            "reviewer": "Sample Reviewer",
+            "revision": "REV-A",
+            "status": "draft",
+            "archived": false,
+            "createdAt": "2026-11-14T10:30:00.000Z",
+            "modifiedAt": "2026-11-18T14:00:00.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "afb2d18a-9fa5-59b5-a505-7c35eb1766eb",
+      "code": "ARG-002",
+      "title": "Structural Material Selection",
+      "problemStatement": "Select the primary structural material for the truss in a de-icing-salt environment.",
+      "objective": "Pick a material that balances cost, strength, durability and maintainability while meeting corrosion protection needs (REQ-005).",
+      "alternatives": [
+        {
+          "id": "d0712217-33e4-5a09-b426-fae341329ec6",
+          "name": "Galvanized structural steel",
+          "description": "Hot-dip galvanized rolled and welded steel sections."
+        },
+        {
+          "id": "0aca628a-d1cc-5739-adb0-df9817a2452c",
+          "name": "Weathering steel",
+          "description": "Atmospheric corrosion-resistant steel that forms a protective patina."
+        },
+        {
+          "id": "13b5aa97-c52d-52f5-9f4c-9864410da422",
+          "name": "Glued-laminated timber",
+          "description": "Engineered timber members with protective detailing."
+        }
+      ],
+      "matrix": {
+        "scaleMin": 1,
+        "scaleMax": 5,
+        "criteria": [
+          {
+            "id": "87479a8e-3a96-5c2e-b9b2-c9be838e1473",
+            "name": "Cost",
+            "weight": 25,
+            "description": ""
+          },
+          {
+            "id": "cbe60734-31e9-56e9-a600-5c64ddd60063",
+            "name": "Safety or Strength",
+            "weight": 30,
+            "description": ""
+          },
+          {
+            "id": "dcadb997-6ccb-5bdf-a953-432caa2eed52",
+            "name": "Durability",
+            "weight": 25,
+            "description": ""
+          },
+          {
+            "id": "4807ca33-cbe0-53a0-9c65-930e90ca7a51",
+            "name": "Maintainability",
+            "weight": 20,
+            "description": ""
+          }
+        ],
+        "scores": [
+          {
+            "alternativeId": "d0712217-33e4-5a09-b426-fae341329ec6",
+            "criterionId": "87479a8e-3a96-5c2e-b9b2-c9be838e1473",
+            "score": 3,
+            "rationale": "Galvanizing adds cost over bare steel."
+          },
+          {
+            "alternativeId": "d0712217-33e4-5a09-b426-fae341329ec6",
+            "criterionId": "cbe60734-31e9-56e9-a600-5c64ddd60063",
+            "score": 4,
+            "rationale": "Well-known strength and ductility."
+          },
+          {
+            "alternativeId": "d0712217-33e4-5a09-b426-fae341329ec6",
+            "criterionId": "dcadb997-6ccb-5bdf-a953-432caa2eed52",
+            "score": 4,
+            "rationale": "Zinc coating gives long protection in most exposures."
+          },
+          {
+            "alternativeId": "d0712217-33e4-5a09-b426-fae341329ec6",
+            "criterionId": "4807ca33-cbe0-53a0-9c65-930e90ca7a51",
+            "score": 4,
+            "rationale": "Low maintenance with periodic inspection."
+          },
+          {
+            "alternativeId": "0aca628a-d1cc-5739-adb0-df9817a2452c",
+            "criterionId": "87479a8e-3a96-5c2e-b9b2-c9be838e1473",
+            "score": 4,
+            "rationale": "No coating cost."
+          },
+          {
+            "alternativeId": "0aca628a-d1cc-5739-adb0-df9817a2452c",
+            "criterionId": "cbe60734-31e9-56e9-a600-5c64ddd60063",
+            "score": 4,
+            "rationale": "Comparable strength to other structural steels."
+          },
+          {
+            "alternativeId": "0aca628a-d1cc-5739-adb0-df9817a2452c",
+            "criterionId": "dcadb997-6ccb-5bdf-a953-432caa2eed52",
+            "score": 4,
+            "rationale": "Good in many atmospheres, but see REQ-005 evaluation."
+          },
+          {
+            "alternativeId": "0aca628a-d1cc-5739-adb0-df9817a2452c",
+            "criterionId": "4807ca33-cbe0-53a0-9c65-930e90ca7a51",
+            "score": 5,
+            "rationale": "Little repainting if the patina is stable."
+          },
+          {
+            "alternativeId": "13b5aa97-c52d-52f5-9f4c-9864410da422",
+            "criterionId": "87479a8e-3a96-5c2e-b9b2-c9be838e1473",
+            "score": 3,
+            "rationale": "Moderate cost; specialist supply."
+          },
+          {
+            "alternativeId": "13b5aa97-c52d-52f5-9f4c-9864410da422",
+            "criterionId": "cbe60734-31e9-56e9-a600-5c64ddd60063",
+            "score": 3,
+            "rationale": "Lower strength-to-size ratio; connections more demanding."
+          },
+          {
+            "alternativeId": "13b5aa97-c52d-52f5-9f4c-9864410da422",
+            "criterionId": "dcadb997-6ccb-5bdf-a953-432caa2eed52",
+            "score": 3,
+            "rationale": "Needs careful moisture protection detailing."
+          },
+          {
+            "alternativeId": "13b5aa97-c52d-52f5-9f4c-9864410da422",
+            "criterionId": "4807ca33-cbe0-53a0-9c65-930e90ca7a51",
+            "score": 2,
+            "rationale": "Regular inspection and re-treatment likely."
+          }
+        ]
+      },
+      "constraintEvaluations": [
+        {
+          "alternativeId": "d0712217-33e4-5a09-b426-fae341329ec6",
+          "requirementId": "5b663e8e-5e99-55a2-9c02-37e3723458d4",
+          "result": "pass",
+          "justification": "Hot-dip galvanizing is judged suitable for de-icing-salt exposure (illustrative team judgement, to be confirmed by a qualified engineer)."
+        },
+        {
+          "alternativeId": "0aca628a-d1cc-5739-adb0-df9817a2452c",
+          "requirementId": "5b663e8e-5e99-55a2-9c02-37e3723458d4",
+          "result": "fail",
+          "justification": "Weathering steel is generally not recommended where de-icing salts cause persistent wet or salt exposure (illustrative team judgement, to be confirmed by a qualified engineer)."
+        },
+        {
+          "alternativeId": "13b5aa97-c52d-52f5-9f4c-9864410da422",
+          "requirementId": "5b663e8e-5e99-55a2-9c02-37e3723458d4",
+          "result": "unverified",
+          "justification": "Suitability for salt exposure not yet established."
+        }
+      ],
+      "assumptions": [
+        "De-icing salts will be used on approach paths and may reach the structure.",
+        "Judgements on suitability are illustrative team opinions, not code-based findings."
+      ],
+      "evidenceSummary": "No test data. Judgements are based on general course knowledge; manufacturer literature is still to be obtained.",
+      "selectedAlternativeId": "d0712217-33e4-5a09-b426-fae341329ec6",
+      "selectionRationale": "Weathering steel scores highest numerically (4.2) but fails REQ-005 and is ineligible. Galvanized steel is the highest-scoring eligible alternative.",
+      "justification": "Galvanized structural steel satisfies the corrosion mandate in REQ-005 and scores 3.75. Weathering steel scores higher but is ruled out by the salt-exposure constraint. Glulam remains unverified for REQ-005.",
+      "risksAndLimitations": "The REQ-005 evaluation is an illustrative judgement and must be confirmed by a qualified engineer. Galvanized finish details are not developed.",
+      "references": [
+        "Course notes — introductory structural analysis",
+        "Manufacturer literature (to be obtained)"
+      ],
+      "author": "FrameLytix Sample Team",
+      "reviewer": "Sample Reviewer",
+      "revision": "REV-A",
+      "status": "approved",
+      "archived": false,
+      "createdAt": "2026-11-14T10:30:00.000Z",
+      "modifiedAt": "2026-11-21T09:00:00.000Z",
+      "revisions": []
+    },
+    {
+      "id": "b427eb4e-389a-5113-959c-7d0be5538195",
+      "code": "ARG-003",
+      "title": "Deck System Selection",
+      "problemStatement": "Select a deck system that spans 4.0 m between floor beams and provides a 2.5 m clear walking width.",
+      "objective": "Choose a deck that is light, durable and compatible with the floor-beam spacing.",
+      "alternatives": [
+        {
+          "id": "b4ab950c-0185-52d1-9e35-a4efb7bc5b16",
+          "name": "Precast concrete deck panels",
+          "description": "Prefabricated concrete panels spanning between floor beams."
+        },
+        {
+          "id": "f9424e77-68e9-5113-8555-a1ac5d768cb6",
+          "name": "FRP deck panels",
+          "description": "Fibre-reinforced polymer panels; light and corrosion resistant."
+        },
+        {
+          "id": "42bb963d-151e-5e44-9133-117c22c7740a",
+          "name": "Timber deck boards",
+          "description": "Treated timber boards on stringers."
+        }
+      ],
+      "matrix": {
+        "scaleMin": 1,
+        "scaleMax": 5,
+        "criteria": [
+          {
+            "id": "a0ce7b59-7217-51c6-955b-1c39b8e6c16f",
+            "name": "Cost",
+            "weight": 30,
+            "description": "Initial cost; higher score = lower cost"
+          },
+          {
+            "id": "6f2228b8-d526-5ccc-8353-d473585b005e",
+            "name": "Safety or Strength",
+            "weight": 40,
+            "description": "Structural robustness and safety margin"
+          },
+          {
+            "id": "8d69e194-35be-56ad-91a7-fa10e0a06031",
+            "name": "Feasibility",
+            "weight": 30,
+            "description": "Constructability, fabrication and transport"
+          }
+        ],
+        "scores": [
+          {
+            "alternativeId": "b4ab950c-0185-52d1-9e35-a4efb7bc5b16",
+            "criterionId": "a0ce7b59-7217-51c6-955b-1c39b8e6c16f",
+            "score": 4,
+            "rationale": "Low material cost, but heavy to lift."
+          },
+          {
+            "alternativeId": "b4ab950c-0185-52d1-9e35-a4efb7bc5b16",
+            "criterionId": "6f2228b8-d526-5ccc-8353-d473585b005e",
+            "score": 4,
+            "rationale": "Robust and stiff."
+          },
+          {
+            "alternativeId": "b4ab950c-0185-52d1-9e35-a4efb7bc5b16",
+            "criterionId": "8d69e194-35be-56ad-91a7-fa10e0a06031",
+            "score": 3,
+            "rationale": "Needs crane access; heavier supporting beams."
+          },
+          {
+            "alternativeId": "f9424e77-68e9-5113-8555-a1ac5d768cb6",
+            "criterionId": "a0ce7b59-7217-51c6-955b-1c39b8e6c16f",
+            "score": 2,
+            "rationale": "Highest material cost."
+          },
+          {
+            "alternativeId": "f9424e77-68e9-5113-8555-a1ac5d768cb6",
+            "criterionId": "6f2228b8-d526-5ccc-8353-d473585b005e",
+            "score": 4,
+            "rationale": "Light with adequate stiffness."
+          },
+          {
+            "alternativeId": "f9424e77-68e9-5113-8555-a1ac5d768cb6",
+            "criterionId": "8d69e194-35be-56ad-91a7-fa10e0a06031",
+            "score": null,
+            "rationale": "Supplier availability and panel spans not yet confirmed."
+          },
+          {
+            "alternativeId": "42bb963d-151e-5e44-9133-117c22c7740a",
+            "criterionId": "a0ce7b59-7217-51c6-955b-1c39b8e6c16f",
+            "score": 5,
+            "rationale": "Lowest initial cost."
+          },
+          {
+            "alternativeId": "42bb963d-151e-5e44-9133-117c22c7740a",
+            "criterionId": "6f2228b8-d526-5ccc-8353-d473585b005e",
+            "score": 3,
+            "rationale": "Needs closely spaced framing."
+          },
+          {
+            "alternativeId": "42bb963d-151e-5e44-9133-117c22c7740a",
+            "criterionId": "8d69e194-35be-56ad-91a7-fa10e0a06031",
+            "score": 4,
+            "rationale": "Easy to install and replace."
+          }
+        ]
+      },
+      "constraintEvaluations": [],
+      "assumptions": [
+        "Deck panels span 4.0 m between floor beams.",
+        "Clear walking width of 2.5 m."
+      ],
+      "evidenceSummary": "Incomplete. FRP feasibility has not been scored; no supplier data collected.",
+      "selectedAlternativeId": null,
+      "selectionRationale": "",
+      "justification": "",
+      "risksAndLimitations": "The matrix is incomplete, so no recommendation can be made yet.",
+      "references": [
+        "Manufacturer literature (to be obtained)"
+      ],
+      "author": "FrameLytix Sample Team",
+      "reviewer": "",
+      "revision": "REV-A",
+      "status": "draft",
+      "archived": false,
+      "createdAt": "2026-11-18T14:00:00.000Z",
+      "modifiedAt": "2026-11-21T09:00:00.000Z",
+      "revisions": []
+    },
+    {
+      "id": "32b1c3b6-ae16-567e-beba-ba7cc3c96f83",
+      "code": "ARG-004",
+      "title": "Connection Method Selection",
+      "problemStatement": "Choose how truss members are connected to suit shop prefabrication and road transport of modules.",
+      "objective": "Balance fabrication quality, site effort and inspection access.",
+      "alternatives": [
+        {
+          "id": "9eb0162b-0c35-506a-b945-3922a554b146",
+          "name": "Shop-welded / field-bolted",
+          "description": "Modules welded in the shop and bolted together on site."
+        },
+        {
+          "id": "5105aef5-a3c9-54b1-9f4e-79fd921dc9c3",
+          "name": "Fully bolted",
+          "description": "All connections bolted with gusset plates."
+        },
+        {
+          "id": "d34f518e-6e9d-5084-b672-748f1260f896",
+          "name": "Pinned connections",
+          "description": "Pin-connected joints at panel points."
+        }
+      ],
+      "matrix": {
+        "scaleMin": 1,
+        "scaleMax": 5,
+        "criteria": [
+          {
+            "id": "a6d13f44-b70b-52b8-b3dc-37b77503adde",
+            "name": "Cost",
+            "weight": 30,
+            "description": "Initial cost; higher score = lower cost"
+          },
+          {
+            "id": "232bfc9a-888b-571a-9df4-dab172fc3dc7",
+            "name": "Safety or Strength",
+            "weight": 40,
+            "description": "Structural robustness and safety margin"
+          },
+          {
+            "id": "e33e4b49-7c63-5aa9-8920-974a98a73349",
+            "name": "Feasibility",
+            "weight": 30,
+            "description": "Constructability, fabrication and transport"
+          }
+        ],
+        "scores": [
+          {
+            "alternativeId": "9eb0162b-0c35-506a-b945-3922a554b146",
+            "criterionId": "a6d13f44-b70b-52b8-b3dc-37b77503adde",
+            "score": 4,
+            "rationale": "Efficient shop welding."
+          },
+          {
+            "alternativeId": "9eb0162b-0c35-506a-b945-3922a554b146",
+            "criterionId": "232bfc9a-888b-571a-9df4-dab172fc3dc7",
+            "score": 4,
+            "rationale": "Continuous shop welds are well controlled."
+          },
+          {
+            "alternativeId": "9eb0162b-0c35-506a-b945-3922a554b146",
+            "criterionId": "e33e4b49-7c63-5aa9-8920-974a98a73349",
+            "score": 4,
+            "rationale": "Suits road-transportable modules."
+          },
+          {
+            "alternativeId": "5105aef5-a3c9-54b1-9f4e-79fd921dc9c3",
+            "criterionId": "a6d13f44-b70b-52b8-b3dc-37b77503adde",
+            "score": 3,
+            "rationale": "More plates and bolts."
+          }
+        ]
+      },
+      "constraintEvaluations": [],
+      "assumptions": [
+        "Prefabricated modules are preferred (REQ-008)."
+      ],
+      "evidenceSummary": "Only partly scored; no evidence collected yet.",
+      "selectedAlternativeId": null,
+      "selectionRationale": "",
+      "justification": "",
+      "risksAndLimitations": "Work in progress. Fatigue and detailing are not considered.",
+      "references": [
+        "Course notes — introductory structural analysis"
+      ],
+      "author": "FrameLytix Sample Team",
+      "reviewer": "",
+      "revision": "REV-A",
+      "status": "draft",
+      "archived": false,
+      "createdAt": "2026-11-21T09:00:00.000Z",
+      "modifiedAt": "2026-11-21T09:00:00.000Z",
+      "revisions": []
+    },
+    {
+      "id": "55a23bcf-8c6e-5a15-8dd4-48b7faf5cc9e",
+      "code": "ARG-005",
+      "title": "Durability and Maintenance Strategy",
+      "problemStatement": "Define how the galvanized steel structure will be protected and maintained over its service life.",
+      "objective": "Minimise life-cycle maintenance while protecting against de-icing-salt corrosion.",
+      "alternatives": [
+        {
+          "id": "28d8eacc-dedc-5d17-9544-b7a844dcc6fa",
+          "name": "Hot-dip galvanizing with 5-year inspections",
+          "description": "Galvanizing only, with periodic inspection."
+        },
+        {
+          "id": "c4214b24-e753-5991-9cad-ea4069abb132",
+          "name": "Multi-coat paint system",
+          "description": "Painted steel with scheduled repainting."
+        },
+        {
+          "id": "ebc8e065-e3a7-55d4-b55a-571a038d93eb",
+          "name": "Duplex (galvanizing + paint)",
+          "description": "Galvanizing topped with a paint system."
+        }
+      ],
+      "matrix": {
+        "scaleMin": 1,
+        "scaleMax": 5,
+        "criteria": [
+          {
+            "id": "64505d21-20f8-56d9-8fc7-3f8fb7315cbf",
+            "name": "Durability",
+            "weight": 40,
+            "description": ""
+          },
+          {
+            "id": "cfbd0b0f-14be-5816-b01d-19e6f9a98926",
+            "name": "Cost",
+            "weight": 30,
+            "description": ""
+          },
+          {
+            "id": "bbb451eb-cfbb-5123-8cbe-783b0d1c9098",
+            "name": "Maintainability",
+            "weight": 30,
+            "description": ""
+          }
+        ],
+        "scores": [
+          {
+            "alternativeId": "28d8eacc-dedc-5d17-9544-b7a844dcc6fa",
+            "criterionId": "64505d21-20f8-56d9-8fc7-3f8fb7315cbf",
+            "score": 3,
+            "rationale": "Adequate in most exposures, but salt may shorten life."
+          },
+          {
+            "alternativeId": "28d8eacc-dedc-5d17-9544-b7a844dcc6fa",
+            "criterionId": "cfbd0b0f-14be-5816-b01d-19e6f9a98926",
+            "score": 4,
+            "rationale": "Moderate cost."
+          },
+          {
+            "alternativeId": "28d8eacc-dedc-5d17-9544-b7a844dcc6fa",
+            "criterionId": "bbb451eb-cfbb-5123-8cbe-783b0d1c9098",
+            "score": 4,
+            "rationale": "Simple inspection routine."
+          },
+          {
+            "alternativeId": "c4214b24-e753-5991-9cad-ea4069abb132",
+            "criterionId": "64505d21-20f8-56d9-8fc7-3f8fb7315cbf",
+            "score": 3,
+            "rationale": "Depends on repainting discipline."
+          },
+          {
+            "alternativeId": "c4214b24-e753-5991-9cad-ea4069abb132",
+            "criterionId": "cfbd0b0f-14be-5816-b01d-19e6f9a98926",
+            "score": 3,
+            "rationale": "Lower first cost, higher life-cycle cost."
+          },
+          {
+            "alternativeId": "c4214b24-e753-5991-9cad-ea4069abb132",
+            "criterionId": "bbb451eb-cfbb-5123-8cbe-783b0d1c9098",
+            "score": 2,
+            "rationale": "Frequent repainting."
+          },
+          {
+            "alternativeId": "ebc8e065-e3a7-55d4-b55a-571a038d93eb",
+            "criterionId": "64505d21-20f8-56d9-8fc7-3f8fb7315cbf",
+            "score": 5,
+            "rationale": "Synergistic protection in aggressive exposure."
+          },
+          {
+            "alternativeId": "ebc8e065-e3a7-55d4-b55a-571a038d93eb",
+            "criterionId": "cfbd0b0f-14be-5816-b01d-19e6f9a98926",
+            "score": 2,
+            "rationale": "Highest first cost."
+          },
+          {
+            "alternativeId": "ebc8e065-e3a7-55d4-b55a-571a038d93eb",
+            "criterionId": "bbb451eb-cfbb-5123-8cbe-783b0d1c9098",
+            "score": 4,
+            "rationale": "Long intervals between maintenance."
+          }
+        ]
+      },
+      "constraintEvaluations": [],
+      "assumptions": [
+        "Service life and inspection intervals are placeholders."
+      ],
+      "evidenceSummary": "Review found that the inspection interval and its basis are not justified.",
+      "selectedAlternativeId": null,
+      "selectionRationale": "",
+      "justification": "",
+      "risksAndLimitations": "Needs revision: 5-year inspection interval is a placeholder and no life-cycle cost estimate exists.",
+      "references": [
+        "Manufacturer literature (to be obtained)"
+      ],
+      "author": "FrameLytix Sample Team",
+      "reviewer": "Sample Reviewer",
+      "revision": "REV-A",
+      "status": "needs-revision",
+      "archived": false,
+      "createdAt": "2026-11-21T09:00:00.000Z",
+      "modifiedAt": "2026-11-24T09:30:00.000Z",
+      "revisions": []
+    }
+  ],
+  "calculations": [
+    {
+      "id": "774ec6db-4085-5992-808c-ccda3aeb97c8",
+      "code": "CALC-001",
+      "title": "Line load (w = q b)",
+      "purpose": "Convert the illustrative pedestrian pressure into a line load per metre of span.",
+      "equation": "w = q \\cdot b",
+      "variables": [
+        {
+          "symbol": "q",
+          "description": "Pedestrian live load (illustrative assumption)",
+          "value": "4.0",
+          "unit": "kPa"
+        },
+        {
+          "symbol": "b",
+          "description": "Clear deck width",
+          "value": "2.5",
+          "unit": "m"
+        }
+      ],
+      "expression": "q*b",
+      "method": "Multiply the pressure by the loaded width; 1 kPa x 1 m = 1 kN/m.",
+      "assumptions": "Uniform pressure over the full clear deck width. 4.0 kPa is an illustrative assumption, not from a code.",
+      "resultValue": "10",
+      "resultUnit": "kN/m",
+      "resultSource": "evaluated",
+      "reference": "Standard statics relation for a simply supported span — see any introductory structural analysis text",
+      "verificationNotes": "Hand-checked by a second team member: 4.0 x 2.5 = 10.0.",
+      "revision": "REV-A",
+      "author": "FrameLytix Sample Team",
+      "archived": false,
+      "createdAt": "2026-11-14T10:30:00.000Z",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    },
+    {
+      "id": "a80ab126-6056-5b8e-a040-99f94c3877fc",
+      "code": "CALC-002",
+      "title": "Midspan moment (M_max = wL²/8)",
+      "purpose": "Maximum bending moment of a simply supported span under a uniform load.",
+      "equation": "M_{\\max} = \\frac{wL^2}{8}",
+      "variables": [
+        {
+          "symbol": "w",
+          "description": "Line load from CALC-001",
+          "value": "10",
+          "unit": "kN/m"
+        },
+        {
+          "symbol": "L",
+          "description": "Clear span",
+          "value": "24.0",
+          "unit": "m"
+        }
+      ],
+      "expression": "w*L^2/8",
+      "method": "Closed-form statics for a simply supported beam; truss treated as an equivalent beam.",
+      "assumptions": "Simply supported; uniform load over the whole span; self-weight not included at this stage.",
+      "resultValue": "720",
+      "resultUnit": "kN·m",
+      "resultSource": "evaluated",
+      "reference": "Standard statics relation for a simply supported span — see any introductory structural analysis text",
+      "verificationNotes": "Hand check by second team member (VER-002): 10 x 24^2 / 8 = 720. Load input still unconfirmed.",
+      "revision": "REV-A",
+      "author": "FrameLytix Sample Team",
+      "archived": false,
+      "createdAt": "2026-11-14T10:30:00.000Z",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    },
+    {
+      "id": "c11f4fd7-31ef-588b-b7e3-6aca17c1de3c",
+      "code": "CALC-003",
+      "title": "Support reaction (R = wL/2)",
+      "purpose": "Vertical reaction at each support under the uniform load.",
+      "equation": "R = \\frac{wL}{2}",
+      "variables": [
+        {
+          "symbol": "w",
+          "description": "Line load from CALC-001",
+          "value": "10",
+          "unit": "kN/m"
+        },
+        {
+          "symbol": "L",
+          "description": "Clear span",
+          "value": "24.0",
+          "unit": "m"
+        }
+      ],
+      "expression": "w*L/2",
+      "method": "Symmetry of a simply supported span under a uniform load.",
+      "assumptions": "Same as CALC-002. Reactions are per bridge (both trusses combined).",
+      "resultValue": "120",
+      "resultUnit": "kN",
+      "resultSource": "evaluated",
+      "reference": "Standard statics relation for a simply supported span — see any introductory structural analysis text",
+      "verificationNotes": "Cross-checked against the load diagram DIA-002.",
+      "revision": "REV-A",
+      "author": "FrameLytix Sample Team",
+      "archived": false,
+      "createdAt": "2026-11-14T10:30:00.000Z",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    },
+    {
+      "id": "2e9b5c02-8d81-5362-8dc0-00d56f44e443",
+      "code": "CALC-004",
+      "title": "Chord force (F = M/h)",
+      "purpose": "Conceptual chord force from the moment couple across the truss depth.",
+      "equation": "F = \\frac{M}{h}",
+      "variables": [
+        {
+          "symbol": "M",
+          "description": "Midspan moment from CALC-002",
+          "value": "720",
+          "unit": "kN·m"
+        },
+        {
+          "symbol": "h",
+          "description": "Truss depth",
+          "value": "3.0",
+          "unit": "m"
+        }
+      ],
+      "expression": "M/h",
+      "method": "Resolve the moment into a force couple acting at the top and bottom chord centroids.",
+      "assumptions": "Whole-bridge moment resolved into one chord couple; split between the two trusses and secondary effects are not considered.",
+      "resultValue": "240",
+      "resultUnit": "kN",
+      "resultSource": "evaluated",
+      "reference": "Standard statics relation for a simply supported span — see any introductory structural analysis text",
+      "verificationNotes": "Reproduced in conceptual-load-check.m (CALC-SUP-001).",
+      "revision": "REV-A",
+      "author": "FrameLytix Sample Team",
+      "archived": false,
+      "createdAt": "2026-11-18T14:00:00.000Z",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    },
+    {
+      "id": "27188653-7b0b-5bb7-a5bd-d3179eeeb284",
+      "code": "CALC-005",
+      "title": "Required chord area (A_req = F/σ_allow)",
+      "purpose": "Order-of-magnitude chord area needed at an illustrative allowable stress.",
+      "equation": "A_{req} = \\frac{F}{\\sigma_{allow}}",
+      "variables": [
+        {
+          "symbol": "F",
+          "description": "Chord force from CALC-004 (240 kN = 240000 N)",
+          "value": "240000",
+          "unit": "N"
+        },
+        {
+          "symbol": "sigma",
+          "description": "Illustrative allowable stress",
+          "value": "150",
+          "unit": "N/mm²"
+        }
+      ],
+      "expression": "F/sigma",
+      "method": "Axial stress check: area = force / allowable stress, with force in newtons and stress in N/mm².",
+      "assumptions": "Illustrative allowable stress of 150 MPa; no buckling, connection, fatigue or load-factor effects considered. NOT a design check.",
+      "resultValue": "1600",
+      "resultUnit": "mm²",
+      "resultSource": "evaluated",
+      "reference": "Standard statics relation for a simply supported span — see any introductory structural analysis text",
+      "verificationNotes": "Unit check: 240000 N / 150 N/mm² = 1600 mm².",
+      "revision": "REV-A",
+      "author": "FrameLytix Sample Team",
+      "archived": false,
+      "createdAt": "2026-11-18T14:00:00.000Z",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    }
+  ],
+  "assets": [
+    {
+      "id": "352e5915-4bf4-5bdc-a989-c577d89a2a21",
+      "drawingId": "DRW-001",
+      "title": "General Arrangement",
+      "relativePath": "03-CAD-and-Technical-Drawings/AutoCAD-2D/PTB-GA-001_General-Arrangement.pdf",
+      "description": "Elevation, plan and cross-section of the conceptual Pratt truss with dimensions and general notes. Conceptual only - NOT FOR CONSTRUCTION.",
+      "revision": "REV-B",
+      "modelUnit": "",
+      "sizeBytes": 7429,
+      "fileModifiedAt": "2026-11-20T10:00:00.000Z",
+      "importedAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "25c7ce60-a3a1-5264-a588-6f2dcb5a6424",
+      "drawingId": "MOD-001",
+      "title": "Pratt truss concept model",
+      "relativePath": "03-CAD-and-Technical-Drawings/3D-Models/PTB-Pratt-Truss-Concept.stl",
+      "description": "Binary STL of the conceptual Pratt truss (chords, verticals, diagonals, floor beams, deck, bracing, abutments). Placeholder cross-sections.",
+      "revision": "REV-A",
+      "modelUnit": "m",
+      "sizeBytes": 34284,
+      "fileModifiedAt": "2026-11-20T10:00:00.000Z",
+      "importedAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "3787240a-1d87-5e77-949b-14c0adde1089",
+      "drawingId": "DIA-001",
+      "title": "Truss configurations comparison",
+      "relativePath": "03-CAD-and-Technical-Drawings/Diagrams-and-Schematics/truss-configurations.svg",
+      "description": "Schematic elevations of Pratt, Warren and Howe trusses compared in ARG-001.",
+      "revision": "REV-A",
+      "modelUnit": "",
+      "sizeBytes": 7002,
+      "fileModifiedAt": "2026-11-20T10:00:00.000Z",
+      "importedAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "02d0c430-c06b-50d9-a365-d16609689cbb",
+      "drawingId": "DIA-002",
+      "title": "Load diagram",
+      "relativePath": "03-CAD-and-Technical-Drawings/Diagrams-and-Schematics/load-diagram.svg",
+      "description": "Simply supported span with w = 10.0 kN/m, reactions of 120 kN and parabolic moment peaking at 720 kN·m.",
+      "revision": "REV-A",
+      "modelUnit": "",
+      "sizeBytes": 7126,
+      "fileModifiedAt": "2026-11-20T10:00:00.000Z",
+      "importedAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "c83235b0-4f6f-57ba-a1e0-cb8db6685e67",
+      "drawingId": "IMG-001",
+      "title": "Site plan sketch",
+      "relativePath": "01-Scope-and-Requirements/Site-and-Environment/site-plan-sketch.png",
+      "description": "Illustrative site sketch of a fictional creek crossing showing banks, abutments and the 24.0 m span.",
+      "revision": "REV-A",
+      "modelUnit": "",
+      "sizeBytes": 108862,
+      "fileModifiedAt": "2026-11-20T10:00:00.000Z",
+      "importedAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "f1453799-25fb-5bf9-9844-4622e3dbaed3",
+      "drawingId": "CALC-SUP-001",
+      "title": "Conceptual load check (MATLAB script)",
+      "relativePath": "02-Engineering-Arguments/Supporting-Calculations/conceptual-load-check.m",
+      "description": "Readable MATLAB script reproducing CALC-001 to CALC-005. Never executed by FrameLytix.",
+      "revision": "REV-A",
+      "modelUnit": "",
+      "sizeBytes": 1922,
+      "fileModifiedAt": "2026-11-20T10:00:00.000Z",
+      "importedAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "01c7bd10-e8cb-54a7-8417-69f255fc143f",
+      "drawingId": "CALC-SUP-002",
+      "title": "Chord force summary (CSV)",
+      "relativePath": "02-Engineering-Arguments/Supporting-Calculations/chord-force-summary.csv",
+      "description": "Tabulated results of the conceptual load check.",
+      "revision": "REV-A",
+      "modelUnit": "",
+      "sizeBytes": 468,
+      "fileModifiedAt": "2026-11-20T10:00:00.000Z",
+      "importedAt": "2026-11-21T09:00:00.000Z"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "87c80ec5-b379-50ae-943a-8d63bd961088",
+      "code": "VER-001",
+      "title": "Span measurement from site sketch",
+      "method": "document-review",
+      "summary": "The 24.0 m clear span was measured between the abutment faces on the illustrative site sketch (IMG-001) and agrees with DRW-001 REV-B. Supports REQ-001.",
+      "outcome": "supports",
+      "recordedBy": "FrameLytix Sample Team",
+      "date": "2026-11-18",
+      "createdAt": "2026-11-18T14:00:00.000Z",
+      "modifiedAt": "2026-11-18T14:00:00.000Z"
+    },
+    {
+      "id": "67bac56d-b373-5c95-b1b4-6d53157c26cc",
+      "code": "VER-002",
+      "title": "Hand check of midspan moment (CALC-002)",
+      "method": "calculation",
+      "summary": "A second team member reproduced 720 kN·m by hand. The arithmetic is correct, but the 4.0 kPa live-load input is an unconfirmed assumption, so this only partially supports REQ-002.",
+      "outcome": "inconclusive",
+      "recordedBy": "Sample Reviewer",
+      "date": "2026-11-21",
+      "createdAt": "2026-11-21T09:00:00.000Z",
+      "modifiedAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "9e660e84-798b-5a5e-af2d-950b7b09db67",
+      "code": "VER-003",
+      "title": "Inspection of DRW-001: floor-beam spacing",
+      "method": "inspection",
+      "summary": "Inspection of DRW-001 REV-B shows a floor beam at each of the 7 panel points with 4.0 m spacing, meeting the maximum spacing of REQ-004.",
+      "outcome": "supports",
+      "recordedBy": "FrameLytix Sample Team",
+      "date": "2026-11-24",
+      "createdAt": "2026-11-24T09:30:00.000Z",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    }
+  ],
+  "risks": [
+    {
+      "id": "1167913c-1bd1-5bf5-9a19-d4b74841fbde",
+      "code": "RSK-001",
+      "title": "Live-load assumption not confirmed against governing code",
+      "description": "The 4.0 kPa pedestrian load is an illustrative assumption. The governing code may require a different load or additional cases.",
+      "category": "Loads",
+      "likelihood": 4,
+      "impact": 5,
+      "residualLikelihood": null,
+      "residualImpact": null,
+      "mitigation": "Identify the governing code and confirm loads with a qualified engineer before any further design.",
+      "owner": "FrameLytix Sample Team",
+      "status": "open",
+      "notes": "Highest unresolved risk.",
+      "archived": false,
+      "createdAt": "2026-11-18T14:00:00.000Z",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    },
+    {
+      "id": "b982dbc0-1749-50d5-ba56-d13f55ce8296",
+      "code": "RSK-002",
+      "title": "Corrosion from de-icing salts",
+      "description": "Salt spray and run-off may accelerate corrosion of steel members and connections.",
+      "category": "Durability",
+      "likelihood": 4,
+      "impact": 4,
+      "residualLikelihood": 2,
+      "residualImpact": 4,
+      "mitigation": "Galvanized steel (ARG-002) with a durability strategy (ARG-005, under revision).",
+      "owner": "FrameLytix Sample Team",
+      "status": "mitigating",
+      "notes": "",
+      "archived": false,
+      "createdAt": "2026-11-18T14:00:00.000Z",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    },
+    {
+      "id": "2f43013c-0354-51b0-98c9-8783950c3b84",
+      "code": "RSK-003",
+      "title": "Deflection and vibration serviceability not yet checked",
+      "description": "Light pedestrian trusses can be lively; no limit has been set and no check performed.",
+      "category": "Serviceability",
+      "likelihood": 3,
+      "impact": 4,
+      "residualLikelihood": null,
+      "residualImpact": null,
+      "mitigation": "Confirm limits (REQ-006), then run a deflection and natural-frequency check.",
+      "owner": "FrameLytix Sample Team",
+      "status": "open",
+      "notes": "",
+      "archived": false,
+      "createdAt": "2026-11-18T14:00:00.000Z",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    },
+    {
+      "id": "75b7f1b2-e39f-52b4-9685-a821a7798262",
+      "code": "RSK-004",
+      "title": "Transport of prefabricated truss segments",
+      "description": "Modules may exceed road transport limits for width, height or mass.",
+      "category": "Construction",
+      "likelihood": 2,
+      "impact": 3,
+      "residualLikelihood": 2,
+      "residualImpact": 3,
+      "mitigation": "Split the truss into modules sized for road transport; confirm with a fabricator.",
+      "owner": "FrameLytix Sample Team",
+      "status": "accepted",
+      "notes": "Accepted for this conceptual stage.",
+      "archived": false,
+      "createdAt": "2026-11-18T14:00:00.000Z",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    },
+    {
+      "id": "5a603da7-7c75-5d68-ac77-f0c4d26eefcf",
+      "code": "RSK-005",
+      "title": "Scour at abutments",
+      "description": "Creek flows could erode abutment foundations.",
+      "category": "Site",
+      "likelihood": 2,
+      "impact": 5,
+      "residualLikelihood": null,
+      "residualImpact": null,
+      "mitigation": "Obtain hydrology and geotechnical information; set foundation depth accordingly.",
+      "owner": "FrameLytix Sample Team",
+      "status": "open",
+      "notes": "",
+      "archived": false,
+      "createdAt": "2026-11-18T14:00:00.000Z",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    }
+  ],
+  "reviewItems": [
+    {
+      "id": "04dbda57-1908-55bd-b333-626756ee7898",
+      "category": "scope",
+      "text": "The project scope states what is being designed and its limits.",
+      "source": "template",
+      "status": "complete",
+      "naJustification": "",
+      "reviewer": "Sample Reviewer",
+      "notes": "Scope states the study is educational and conceptual.",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    },
+    {
+      "id": "ae672682-ebbc-5731-9db1-b66c3184b954",
+      "category": "decisions",
+      "text": "Every engineering argument has a selected alternative with justification.",
+      "source": "template",
+      "status": "open",
+      "naJustification": "",
+      "reviewer": "",
+      "notes": "ARG-003, ARG-004 and ARG-005 are incomplete.",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    },
+    {
+      "id": "f34e9f84-f227-59a3-a085-49288cfc235b",
+      "category": "constraints",
+      "text": "Mandatory requirements are evaluated against every alternative.",
+      "source": "template",
+      "status": "open",
+      "naJustification": "",
+      "reviewer": "",
+      "notes": "REQ-006 is unverified for all truss alternatives.",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    },
+    {
+      "id": "2c85df79-29f7-5c6a-b724-a6e644241fbe",
+      "category": "assumptions",
+      "text": "Assumptions are stated with units and marked as illustrative where applicable.",
+      "source": "template",
+      "status": "complete",
+      "naJustification": "",
+      "reviewer": "Sample Reviewer",
+      "notes": "",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    },
+    {
+      "id": "6d7a1147-d6cb-5f81-929e-1f4e176e3459",
+      "category": "calculations",
+      "text": "Calculation inputs are confirmed against the governing code.",
+      "source": "custom",
+      "status": "open",
+      "naJustification": "",
+      "reviewer": "",
+      "notes": "Blocked by RSK-001.",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    },
+    {
+      "id": "c315095c-e4fa-5587-a0b1-314ba5ffffff",
+      "category": "calculations",
+      "text": "Calculation results include units and have been hand checked.",
+      "source": "template",
+      "status": "complete",
+      "naJustification": "",
+      "reviewer": "Sample Reviewer",
+      "notes": "",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    },
+    {
+      "id": "1eb3f9c6-40ad-5458-a366-eced1564855c",
+      "category": "evidence",
+      "text": "Every requirement marked verified has verification notes or evidence.",
+      "source": "template",
+      "status": "complete",
+      "naJustification": "",
+      "reviewer": "Sample Reviewer",
+      "notes": "",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    },
+    {
+      "id": "1c1bde30-a76b-5c5d-997c-9ca47666b164",
+      "category": "evidence",
+      "text": "Physical test results are referenced where tests were performed.",
+      "source": "template",
+      "status": "not-applicable",
+      "naJustification": "Conceptual study; no physical testing is in scope.",
+      "reviewer": "Sample Reviewer",
+      "notes": "",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    },
+    {
+      "id": "ff4fde02-d889-5117-953d-e5107f951fcb",
+      "category": "drawings",
+      "text": "Drawings carry an identifier, revision and a not-for-construction notice.",
+      "source": "template",
+      "status": "complete",
+      "naJustification": "",
+      "reviewer": "Sample Reviewer",
+      "notes": "",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    },
+    {
+      "id": "77a7f2fe-0fea-548b-b0e0-0b643972fa84",
+      "category": "risks",
+      "text": "High and unresolved risks have been reviewed and have an owner.",
+      "source": "template",
+      "status": "open",
+      "naJustification": "",
+      "reviewer": "",
+      "notes": "RSK-001 remains unresolved.",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    },
+    {
+      "id": "73108621-7aa7-5e5e-85e9-900e17ace850",
+      "category": "references",
+      "text": "Manufacturer data sheets are attached for selected products.",
+      "source": "template",
+      "status": "not-applicable",
+      "naJustification": "No manufacturer products are selected at this conceptual stage.",
+      "reviewer": "Sample Reviewer",
+      "notes": "",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    },
+    {
+      "id": "d3c1779f-4784-50a8-b855-cf06348437e1",
+      "category": "reporting",
+      "text": "The exported report has been reviewed for accuracy and disclaimers.",
+      "source": "custom",
+      "status": "open",
+      "naJustification": "",
+      "reviewer": "",
+      "notes": "",
+      "modifiedAt": "2026-11-24T09:30:00.000Z"
+    }
+  ],
+  "links": [
+    {
+      "id": "a17bf6e7-4418-54ba-8419-ea33c2008f2e",
+      "a": {
+        "type": "requirement",
+        "id": "0c30cd36-baf0-5199-b0c7-a278d24465c5"
+      },
+      "b": {
+        "type": "argument",
+        "id": "cb98648b-4623-5927-8bd4-5f3070298cc5"
+      },
+      "note": "Span requirement is mandatory for the truss configuration decision.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "2386b533-592f-5fad-bcc9-960691daf67c",
+      "a": {
+        "type": "requirement",
+        "id": "0c30cd36-baf0-5199-b0c7-a278d24465c5"
+      },
+      "b": {
+        "type": "calculation",
+        "id": "a80ab126-6056-5b8e-a040-99f94c3877fc"
+      },
+      "note": "The 24.0 m span is the input L to the midspan moment.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "8cfaa325-7037-5ce6-a7cd-b2a6d7fa1e0d",
+      "a": {
+        "type": "requirement",
+        "id": "0c30cd36-baf0-5199-b0c7-a278d24465c5"
+      },
+      "b": {
+        "type": "asset",
+        "id": "352e5915-4bf4-5bdc-a989-c577d89a2a21"
+      },
+      "note": "Span shown on the general arrangement.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "9f201d75-e3b3-5cad-88ce-e8d1e4355e0b",
+      "a": {
+        "type": "requirement",
+        "id": "0c30cd36-baf0-5199-b0c7-a278d24465c5"
+      },
+      "b": {
+        "type": "evidence",
+        "id": "87c80ec5-b379-50ae-943a-8d63bd961088"
+      },
+      "note": "Span verified by document review.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "5e166f7b-c387-5823-9932-4193d8543e52",
+      "a": {
+        "type": "requirement",
+        "id": "0c30cd36-baf0-5199-b0c7-a278d24465c5"
+      },
+      "b": {
+        "type": "asset",
+        "id": "c83235b0-4f6f-57ba-a1e0-cb8db6685e67"
+      },
+      "note": "Span measured on the site sketch.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "ca0b1a05-d66f-5b3c-a3e9-79f88dd37e92",
+      "a": {
+        "type": "requirement",
+        "id": "2a3e8da7-ec6e-5f27-90af-4791346ca9e2"
+      },
+      "b": {
+        "type": "calculation",
+        "id": "774ec6db-4085-5992-808c-ccda3aeb97c8"
+      },
+      "note": "Line load from the illustrative live load.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "52903cd4-27ed-5728-8aef-dab5bdf01272",
+      "a": {
+        "type": "requirement",
+        "id": "2a3e8da7-ec6e-5f27-90af-4791346ca9e2"
+      },
+      "b": {
+        "type": "calculation",
+        "id": "a80ab126-6056-5b8e-a040-99f94c3877fc"
+      },
+      "note": "Midspan moment under the live load.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "a91b9469-9108-5499-a518-81a593198dda",
+      "a": {
+        "type": "requirement",
+        "id": "2a3e8da7-ec6e-5f27-90af-4791346ca9e2"
+      },
+      "b": {
+        "type": "calculation",
+        "id": "2e9b5c02-8d81-5362-8dc0-00d56f44e443"
+      },
+      "note": "Chord force derived from the moment.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "f379fd1a-28f5-583d-8ba4-f938b6c19bac",
+      "a": {
+        "type": "requirement",
+        "id": "2a3e8da7-ec6e-5f27-90af-4791346ca9e2"
+      },
+      "b": {
+        "type": "calculation",
+        "id": "27188653-7b0b-5bb7-a5bd-d3179eeeb284"
+      },
+      "note": "Required chord area at the illustrative stress.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "25f75082-34cd-54ed-ad72-48fed4472c9a",
+      "a": {
+        "type": "requirement",
+        "id": "2a3e8da7-ec6e-5f27-90af-4791346ca9e2"
+      },
+      "b": {
+        "type": "evidence",
+        "id": "67bac56d-b373-5c95-b1b4-6d53157c26cc"
+      },
+      "note": "Hand check (inconclusive: load unconfirmed).",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "bb444b90-6678-5c18-aea7-3cd82e8b8072",
+      "a": {
+        "type": "requirement",
+        "id": "2a3e8da7-ec6e-5f27-90af-4791346ca9e2"
+      },
+      "b": {
+        "type": "risk",
+        "id": "1167913c-1bd1-5bf5-9a19-d4b74841fbde"
+      },
+      "note": "Live-load assumption risk.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "c76a5dc5-3945-5845-a47e-6b421bb4e326",
+      "a": {
+        "type": "requirement",
+        "id": "7d41f83c-564e-596a-8c33-a28a14cada44"
+      },
+      "b": {
+        "type": "asset",
+        "id": "352e5915-4bf4-5bdc-a989-c577d89a2a21"
+      },
+      "note": "Clear width shown on the cross-section.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "0f21f1d0-0ac7-515e-9cca-9206167eea2d",
+      "a": {
+        "type": "requirement",
+        "id": "7d41f83c-564e-596a-8c33-a28a14cada44"
+      },
+      "b": {
+        "type": "argument",
+        "id": "b427eb4e-389a-5113-959c-7d0be5538195"
+      },
+      "note": "Deck system must provide the clear width.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "05de1278-9dea-5c90-9052-5f2ddffe2ed6",
+      "a": {
+        "type": "requirement",
+        "id": "561ff441-cf3b-5fde-87da-38f871879087"
+      },
+      "b": {
+        "type": "argument",
+        "id": "cb98648b-4623-5927-8bd4-5f3070298cc5"
+      },
+      "note": "Floor-beam spacing is a mandatory constraint; Warren fails it.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "59a2b15f-36cb-5c7a-bd42-278353469c99",
+      "a": {
+        "type": "requirement",
+        "id": "561ff441-cf3b-5fde-87da-38f871879087"
+      },
+      "b": {
+        "type": "argument",
+        "id": "b427eb4e-389a-5113-959c-7d0be5538195"
+      },
+      "note": "Deck panels set the spacing limit.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "47a77f31-1d17-5f44-9d7c-fbb5b9f0e785",
+      "a": {
+        "type": "requirement",
+        "id": "561ff441-cf3b-5fde-87da-38f871879087"
+      },
+      "b": {
+        "type": "evidence",
+        "id": "9e660e84-798b-5a5e-af2d-950b7b09db67"
+      },
+      "note": "Inspection of the GA drawing.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "41738230-570b-54b9-b732-0960282ddd5c",
+      "a": {
+        "type": "requirement",
+        "id": "561ff441-cf3b-5fde-87da-38f871879087"
+      },
+      "b": {
+        "type": "asset",
+        "id": "352e5915-4bf4-5bdc-a989-c577d89a2a21"
+      },
+      "note": "Floor-beam spacing shown on the elevation and plan.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "fa97588d-f649-50e6-add8-22ebae8cbae8",
+      "a": {
+        "type": "requirement",
+        "id": "5b663e8e-5e99-55a2-9c02-37e3723458d4"
+      },
+      "b": {
+        "type": "argument",
+        "id": "afb2d18a-9fa5-59b5-a505-7c35eb1766eb"
+      },
+      "note": "Material selection under corrosion constraint.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "92b28c66-7de5-5ffd-9406-b60f868a245a",
+      "a": {
+        "type": "requirement",
+        "id": "5b663e8e-5e99-55a2-9c02-37e3723458d4"
+      },
+      "b": {
+        "type": "argument",
+        "id": "55a23bcf-8c6e-5a15-8dd4-48b7faf5cc9e"
+      },
+      "note": "Durability and maintenance strategy.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "eb0ffe8f-62b9-59e5-bf49-e0daa36d3771",
+      "a": {
+        "type": "requirement",
+        "id": "5b663e8e-5e99-55a2-9c02-37e3723458d4"
+      },
+      "b": {
+        "type": "risk",
+        "id": "b982dbc0-1749-50d5-ba56-d13f55ce8296"
+      },
+      "note": "Corrosion risk.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "55b84757-4483-5488-b761-027cf41db09c",
+      "a": {
+        "type": "requirement",
+        "id": "5b45658f-caef-58db-8d5a-b0e3e3426be1"
+      },
+      "b": {
+        "type": "argument",
+        "id": "cb98648b-4623-5927-8bd4-5f3070298cc5"
+      },
+      "note": "Deflection limit is an unverified mandatory constraint.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "c57b5601-351b-5274-9008-f41ddd666467",
+      "a": {
+        "type": "requirement",
+        "id": "5b45658f-caef-58db-8d5a-b0e3e3426be1"
+      },
+      "b": {
+        "type": "risk",
+        "id": "2f43013c-0354-51b0-98c9-8783950c3b84"
+      },
+      "note": "Serviceability risk.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "2183b3d8-bda5-5109-84c6-94c7a3b97b96",
+      "a": {
+        "type": "requirement",
+        "id": "1028da41-b4d8-5ff9-8ba9-c8fcde4e7983"
+      },
+      "b": {
+        "type": "argument",
+        "id": "55a23bcf-8c6e-5a15-8dd4-48b7faf5cc9e"
+      },
+      "note": "Maintenance objective addressed by the durability strategy.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "04ddfb04-3557-5591-bdc0-c3aae8a46b4d",
+      "a": {
+        "type": "requirement",
+        "id": "e716ba55-4ef2-581d-b51e-699649704be0"
+      },
+      "b": {
+        "type": "risk",
+        "id": "75b7f1b2-e39f-52b4-9685-a821a7798262"
+      },
+      "note": "Transport of prefabricated modules.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "97d830ba-0d11-5e41-9b04-9605fa097c5d",
+      "a": {
+        "type": "requirement",
+        "id": "36155b53-32be-5afd-8842-1a2ad38a0b4c"
+      },
+      "b": {
+        "type": "asset",
+        "id": "c83235b0-4f6f-57ba-a1e0-cb8db6685e67"
+      },
+      "note": "Approach paths shown on the site sketch.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "ac5ad4de-da7c-5760-90d0-6d9e35eaa7d3",
+      "a": {
+        "type": "argument",
+        "id": "cb98648b-4623-5927-8bd4-5f3070298cc5"
+      },
+      "b": {
+        "type": "calculation",
+        "id": "2e9b5c02-8d81-5362-8dc0-00d56f44e443"
+      },
+      "note": "Chord force informs the configuration decision.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "9b6ab6b4-1c0a-50b2-a521-1147e9181599",
+      "a": {
+        "type": "argument",
+        "id": "cb98648b-4623-5927-8bd4-5f3070298cc5"
+      },
+      "b": {
+        "type": "asset",
+        "id": "25c7ce60-a3a1-5264-a588-6f2dcb5a6424"
+      },
+      "note": "Concept model of the selected configuration.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "b6adecaa-6310-52a2-b3a5-0c8e97ba6bc1",
+      "a": {
+        "type": "argument",
+        "id": "cb98648b-4623-5927-8bd4-5f3070298cc5"
+      },
+      "b": {
+        "type": "asset",
+        "id": "3787240a-1d87-5e77-949b-14c0adde1089"
+      },
+      "note": "Comparison of configurations.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "2ab1a231-ad9c-5875-8be2-bc406d79968b",
+      "a": {
+        "type": "argument",
+        "id": "afb2d18a-9fa5-59b5-a505-7c35eb1766eb"
+      },
+      "b": {
+        "type": "calculation",
+        "id": "27188653-7b0b-5bb7-a5bd-d3179eeeb284"
+      },
+      "note": "Required chord area for the material.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "caa8fec2-54aa-52e6-9e45-02d7305e5658",
+      "a": {
+        "type": "argument",
+        "id": "32b1c3b6-ae16-567e-beba-ba7cc3c96f83"
+      },
+      "b": {
+        "type": "requirement",
+        "id": "e716ba55-4ef2-581d-b51e-699649704be0"
+      },
+      "note": "Connections must suit prefabricated modules.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "4365e6b7-d100-5a7b-9542-3710d41b3166",
+      "a": {
+        "type": "calculation",
+        "id": "a80ab126-6056-5b8e-a040-99f94c3877fc"
+      },
+      "b": {
+        "type": "asset",
+        "id": "02d0c430-c06b-50d9-a365-d16609689cbb"
+      },
+      "note": "Moment diagram.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "297f8257-7cdc-584e-b991-52f9d4ab157a",
+      "a": {
+        "type": "calculation",
+        "id": "c11f4fd7-31ef-588b-b7e3-6aca17c1de3c"
+      },
+      "b": {
+        "type": "asset",
+        "id": "02d0c430-c06b-50d9-a365-d16609689cbb"
+      },
+      "note": "Reactions shown on the load diagram.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "27cea5e8-5be2-53f1-a8f5-154850c59ed6",
+      "a": {
+        "type": "calculation",
+        "id": "a80ab126-6056-5b8e-a040-99f94c3877fc"
+      },
+      "b": {
+        "type": "asset",
+        "id": "f1453799-25fb-5bf9-9844-4622e3dbaed3"
+      },
+      "note": "Reproduced in the MATLAB script.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "b2daa496-d152-5951-a4e9-b5ecb25c747b",
+      "a": {
+        "type": "calculation",
+        "id": "2e9b5c02-8d81-5362-8dc0-00d56f44e443"
+      },
+      "b": {
+        "type": "asset",
+        "id": "01c7bd10-e8cb-54a7-8417-69f255fc143f"
+      },
+      "note": "Tabulated in the chord force summary.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    },
+    {
+      "id": "b7450b59-1d27-5a1f-8ed2-a9c3a366ec8e",
+      "a": {
+        "type": "risk",
+        "id": "5a603da7-7c75-5d68-ac77-f0c4d26eefcf"
+      },
+      "b": {
+        "type": "asset",
+        "id": "c83235b0-4f6f-57ba-a1e0-cb8db6685e67"
+      },
+      "note": "Creek and abutment locations.",
+      "createdAt": "2026-11-21T09:00:00.000Z"
+    }
+  ],
+  "exportHistory": [],
+  "settings": {
+    "reportSections": [
+      "cover",
+      "metadata",
+      "summary",
+      "scope",
+      "criteria",
+      "requirements",
+      "arguments",
+      "calculations",
+      "traceability",
+      "risks",
+      "revisions",
+      "drawings",
+      "review",
+      "outstanding",
+      "references",
+      "disclaimer"
+    ],
+    "defaultAssetFolder": "03-CAD-and-Technical-Drawings/AutoCAD-2D"
+  }
+}
