@@ -5,6 +5,9 @@
 *.bat text eol=crlf
 *.cmd text eol=crlf
 
+# The bundled sample's manifest records exact file sizes — keep its bytes unchanged.
+samples/** -text
+
 # Binary assets — never modify bytes.
 *.png binary
 *.jpg binary
