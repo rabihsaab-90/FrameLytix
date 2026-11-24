@@ -46,6 +46,9 @@ export default defineConfig({
     resolve: { alias },
     build: {
       outDir: 'out/main',
+      // Bundle runtime dependencies (zod, katex) into the main bundle so the packaged app
+      // ships no node_modules folder (see electron-builder.yml `files`).
+      externalizeDeps: false,
       rollupOptions: { input: { index: resolve(__dirname, 'electron/main.ts') } }
     }
   },
@@ -53,6 +56,7 @@ export default defineConfig({
     resolve: { alias },
     build: {
       outDir: 'out/preload',
+      externalizeDeps: false,
       rollupOptions: {
         input: { index: resolve(__dirname, 'electron/preload.ts') },
         output: { format: 'cjs', entryFileNames: '[name].cjs' }

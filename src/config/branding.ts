@@ -20,7 +20,8 @@ export const BRANDING = {
     'regulatory compliance engine. Documentation completeness, weighted scores and internal ' +
     'approval statuses do not establish that a design is safe, compliant or fit for ' +
     'construction. Responsibility for engineering validation remains with appropriately ' +
-    'qualified individuals.'
+    'qualified individuals. It does not replace the review, approval or seal of a licensed ' +
+    'professional engineer where the law requires one.'
 } as const;
 
 export const COLOURS = {

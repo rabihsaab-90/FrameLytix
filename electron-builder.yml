@@ -1,7 +1,22 @@
 # FrameLytix packaging. Unsigned builds; never publishes. No signing secrets here.
 appId: io.github.framelytix.desktop
 productName: FrameLytix
-copyright: Copyright © FrameLytix contributors
+copyright: Copyright © 2026 Rabih Saab
+# Binary hardening (Electron fuses), flipped at package time:
+# - no ELECTRON_RUN_AS_NODE, NODE_OPTIONS or --inspect, so the packaged exe cannot be
+#   repurposed as a general Node runtime or debugged into;
+# - app code loads only from app.asar, and its integrity is validated (Windows + macOS);
+# - file:// pages get no extra privileges (the app uses its own app:// protocol).
+electronFuses:
+  runAsNode: false
+  enableNodeOptionsEnvironmentVariable: false
+  enableNodeCliInspectArguments: false
+  enableEmbeddedAsarIntegrityValidation: true
+  onlyLoadAppFromAsar: true
+  enableCookieEncryption: true
+  grantFileProtocolExtraPrivileges: false
+  # Unsigned macOS builds: re-apply an ad-hoc signature after flipping fuses (Apple silicon).
+  resetAdHocDarwinSignature: true
 directories:
   output: release
   buildResources: build
@@ -9,6 +24,9 @@ files:
   - out/**
   - package.json
   - '!**/*.map'
+  # Everything the app needs is bundled into out/ by electron-vite; shipping node_modules
+  # would add ~130 MB of unused code (including native binaries for other platforms).
+  - '!node_modules/**/*'
 asar: true
 extraResources:
   - from: samples
@@ -17,6 +35,8 @@ extraResources:
     to: THIRD_PARTY_NOTICES.md
   - from: LICENSE
     to: LICENSE
+  - from: PRIVACY.md
+    to: PRIVACY.md
   - from: build/icons
     to: icons
 win:
@@ -25,6 +45,8 @@ win:
       arch:
         - x64
   icon: build/icons/icon.ico
+  # Used by the portable zip target (the NSIS installer sets its own name below).
+  artifactName: FrameLytix-${version}-win-x64-portable.${ext}
 nsis:
   oneClick: false
   allowToChangeInstallationDirectory: true

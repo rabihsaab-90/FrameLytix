@@ -121,9 +121,19 @@ export function toRelativePosix(root: string, absolute: string): string | null {
  * associated editor (MATLAB opens .m files in its editor, it does not execute them).
  */
 export const BLOCKED_EXTENSIONS: ReadonlySet<string> = new Set([
-  'exe', 'msi', 'bat', 'cmd', 'com', 'scr', 'ps1', 'psm1', 'vbs', 'vbe', 'js', 'jse', 'wsf', 'wsh',
-  'hta', 'cpl', 'jar', 'app', 'sh', 'command', 'lnk', 'url', 'reg', 'dll', 'appref-ms', 'scf', 'pif',
-  'msc', 'gadget', 'application', 'iso'
+  // Windows executables, installers and script hosts
+  'exe', 'msi', 'msp', 'mst', 'bat', 'cmd', 'com', 'scr', 'pif', 'cpl', 'dll', 'ocx', 'sys', 'drv',
+  'ps1', 'psm1', 'psd1', 'ps1xml', 'ps2', 'ps2xml', 'psc1', 'psc2',
+  'vb', 'vbs', 'vbe', 'js', 'jse', 'ws', 'wsc', 'wsf', 'wsh', 'sct', 'shb', 'shs', 'hta', 'chm', 'hlp',
+  'msc', 'gadget', 'application', 'appref-ms', 'xbap', 'jnlp', 'jar',
+  'msix', 'msixbundle', 'appx', 'appxbundle', 'diagcab', 'inf', 'ins', 'isp', 'reg', 'scf',
+  // Shortcuts and shell locations that can point anywhere
+  'lnk', 'url', 'website', 'settingcontent-ms', 'library-ms', 'search-ms', 'searchconnector-ms',
+  // Disk images that auto-mount
+  'iso', 'img', 'vhd', 'vhdx',
+  // macOS / Linux
+  'app', 'command', 'sh', 'tool', 'pkg', 'mpkg', 'dmg', 'scpt', 'applescript', 'workflow', 'action',
+  'terminal', 'prefpane', 'kext', 'desktop', 'run', 'appimage', 'deb', 'rpm'
 ]);
 
 /** Extension as Windows would interpret it (trailing dots/spaces and ADS suffixes ignored). */
@@ -137,4 +147,16 @@ export function effectiveExtension(nameOrPath: string): string {
 
 export function isBlockedExtension(nameOrPath: string): boolean {
   return BLOCKED_EXTENSIONS.has(effectiveExtension(nameOrPath));
+}
+
+/**
+ * Script files that may be imported (engineers keep analysis scripts with a project) but are
+ * never handed to the system handler, because a default association can run them.
+ */
+export const OPEN_BLOCKED_SCRIPT_EXTENSIONS: ReadonlySet<string> = new Set(['py', 'pyw', 'pyc', 'pyo', 'pyz', 'pl', 'rb']);
+
+/** True when FrameLytix must not open this file with its associated application. */
+export function isBlockedForOpen(nameOrPath: string): boolean {
+  const ext = effectiveExtension(nameOrPath);
+  return BLOCKED_EXTENSIONS.has(ext) || OPEN_BLOCKED_SCRIPT_EXTENSIONS.has(ext);
 }
