@@ -1,4 +1,4 @@
-import { access, mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
+import { access, mkdir, readdir, readFile, realpath, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { serializeManifest, type ProjectManifest } from '../../shared/schemas/project';
@@ -58,7 +58,8 @@ describe('demo', () => {
     if (!r.ok) return;
     open.push(r.session);
     expect(r.session.isDemo).toBe(true);
-    expect(isInside(demo.base, r.session.rootPath)).toBe(true);
+    // rootPath is a resolved real path; resolve the base too (Windows runners use 8.3 short temp paths).
+    expect(isInside(await realpath(demo.base), r.session.rootPath)).toBe(true);
     expect(path.basename(r.session.rootPath)).toBe('Pedestrian-Truss-Bridge');
 
     const edited: ProjectManifest = structuredClone(r.manifest);
