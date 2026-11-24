@@ -26,7 +26,7 @@ Windows 11 · Node 26.13.1 · npm 11.20 · Electron 45.4.1 · electron-vite 6 ·
 ## Not verified / blocked
 - Installer not run through the NSIS install wizard by automation (unpacked build tested instead).
 - macOS DMG: configured only; never built or tested (requires macOS).
-- GitHub Actions: never run (repository not published).
+- GitHub Actions CI: run #2 (commit 842d134) passed — lint/typecheck/test/build on windows-latest and macos-latest, plus Windows E2E. Release workflow not yet run. macOS DMG still never built or launched.
 - Manual offline procedure in docs/OFFLINE_VERIFICATION.md not yet performed by the owner.
 
 ## Known limitations / deferred
