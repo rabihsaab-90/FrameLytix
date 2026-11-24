@@ -4,7 +4,7 @@ import { dialog, shell } from 'electron';
 import { z } from 'zod';
 import { IPC_CHANNELS, type ActionResult, type ImportDecision, type ImportResult } from '../../shared/types/ipc';
 import type { AppState } from '../appState';
-import { effectiveExtension, isBlockedExtension, isInside, resolveInsideRoot, toRelativePosix } from '../security/paths';
+import { effectiveExtension, isBlockedForOpen, isInside, resolveInsideRoot, toRelativePosix } from '../security/paths';
 import { buildTree, createFolder, MAX_IMPORT_FILES, MAX_STAT_PATHS, statMany } from '../services/fileService';
 import { AbsPath, handle, RelPath, Str, UserFacingError } from './handle';
 
@@ -100,7 +100,7 @@ export function registerFilesIpc(state: AppState): void {
   handle(state, IPC_CHANNELS.filesOpenExternal, z.tuple([RelPath]), async (rel): Promise<ActionResult> => {
     const root = requireRoot();
     const abs = await resolveInsideRoot(root, rel);
-    if (isBlockedExtension(abs)) {
+    if (isBlockedForOpen(abs)) {
       return { ok: false, message: `.${effectiveExtension(abs)} files can run code, so FrameLytix does not open them. Use Reveal in File Explorer instead.` };
     }
     const s = await stat(abs).catch(() => null);

@@ -23,6 +23,11 @@ Windows 11 · Node 26.13.1 · npm 11.20 · Electron 45.4.1 · electron-vite 6 ·
 - `npm run test:e2e`: 22 passed.
 - `npm run dist:win`: `release/FrameLytix-Setup-0.1.0-x64.exe` (161 MB, unsigned). Packaged `win-unpacked` app smoke-tested: demo, PDF, STL, KaTeX, bundled fonts, zero remote requests.
 
+## Security audit (2026-11-24)
+- Ledger: `security-checks.csv` (70 checks); report: `docs/SECURITY_AUDIT.md`.
+- Fixes: Electron fuses, `node_modules` no longer shipped (asar 136 MB → 11 MB), wider blocked-file list (+ open-only block for scripts), minimatch override (npm audit 0), Actions pinned to SHAs with `persist-credentials: false`, Dependabot, PRIVACY.md, licensed-engineer disclaimer.
+- This PC has Windows Smart App Control ON: newly built unsigned executables cannot run here, so `npm run dist:win` fails at the NSIS uninstaller step (`spawn UNKNOWN`). Local release artifact = portable zip (`electron-builder --win zip --prepackaged release/win-unpacked`). The NSIS installer must be built by the GitHub release workflow.
+
 ## Not verified / blocked
 - Installer not run through the NSIS install wizard by automation (unpacked build tested instead).
 - macOS DMG: configured only; never built or tested (requires macOS).

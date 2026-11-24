@@ -55,3 +55,19 @@ Initial development release (pre-release, unverified on macOS).
   every IPC request, path containment within the project folder, blocked executable file types on
   import and open, and network requests blocked in production builds.
 - Windows NSIS installer build (unsigned). A macOS DMG build is configured but unverified.
+- Packaged-app hardening with Electron fuses: no `ELECTRON_RUN_AS_NODE`, `NODE_OPTIONS` or
+  `--inspect`, app code loaded only from an integrity-checked `app.asar`, and no extra `file://`
+  privileges.
+- A longer list of file types that FrameLytix never imports or opens, including shortcuts, help
+  files, app packages and disk images. Script files such as `.py` can be imported but are never
+  opened with their associated application.
+- Privacy notice (`PRIVACY.md`) describing what the app stores locally. It collects nothing.
+
+### Changed
+
+- The installer no longer ships an unused `node_modules` folder, which removes about 130 MB of
+  unused code and native binaries.
+- GitHub Actions are pinned to exact commit SHAs, checkouts do not keep credentials, and Dependabot
+  proposes monthly updates.
+- The disclaimer now states that FrameLytix does not replace the review or seal of a licensed
+  professional engineer.

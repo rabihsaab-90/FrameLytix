@@ -92,6 +92,9 @@ All screenshots are of the bundled, fictional sample project (a conceptual pedes
 
    The value must match the one in the `.sha256` file exactly. If it does not, do not run the file.
 4. **The installer is not code-signed.** Windows SmartScreen may show "Windows protected your PC". Only after the checksum matches, you can choose **More info → Run anyway**. Do not disable Windows security features to install FrameLytix.
+5. **Smart App Control.** On Windows 11 PCs where Smart App Control is turned on, Windows blocks unsigned applications outright and offers no "Run anyway" option. FrameLytix cannot run on those PCs until releases are code-signed. Do not turn Smart App Control off for this; it cannot be turned back on without reinstalling Windows.
+
+A portable build (`FrameLytix-<version>-win-x64-portable.zip`) may also be attached to a release: extract it anywhere and run `FrameLytix.exe`. The same signing caveats apply.
 
 No macOS download is offered because no macOS build has been produced or tested.
 
@@ -241,12 +244,13 @@ Automated tests are organised in three groups:
 
 | Suite | Result |
 |---|---|
-| Unit + integration (`npm test`) | 375 passed, 0 failed (22 files) |
+| Unit + integration (`npm test`) | 376 passed, 0 failed (22 files) |
 | End-to-end (`npm run test:e2e`) | 22 passed, 0 failed |
 | Lint / typecheck | Clean |
-| Windows installer (`npm run dist:win`) | Built; packaged app smoke-tested offline (sample, PDF, STL, KaTeX, fonts, no network requests) |
+| `npm audit` | 0 vulnerabilities |
+| Packaged app bundle | Smoke-tested offline (sample, PDF viewer, STL, KaTeX, fonts, PDF export, no network requests); fuse settings confirmed with `@electron/fuses read` |
 
-GitHub Actions workflows exist in `.github/workflows/` (CI on Windows and macOS, and a release workflow), but they have **never run** because the repository is not published yet. Treat CI as unverified until the first push.
+GitHub Actions CI runs on every push (lint, typecheck, tests and build on Windows and macOS, plus Windows end-to-end tests). The macOS job confirms the code builds and its tests pass there; the macOS app itself has not been launched or tested.
 
 ## Limitations
 
@@ -268,7 +272,15 @@ MIT © 2026 Rabih Saab. See [LICENSE](LICENSE). Bundled open-source components a
 
 ## Disclaimer
 
-FrameLytix is an educational engineering documentation and decision-support workspace. It is not certified engineering design software, a structural analysis solver or a regulatory compliance engine. Documentation completeness, weighted scores and internal approval statuses do not establish that a design is safe, compliant or fit for construction. Responsibility for engineering validation remains with appropriately qualified individuals.
+FrameLytix is an educational engineering documentation and decision-support workspace. It is not certified engineering design software, a structural analysis solver or a regulatory compliance engine. Documentation completeness, weighted scores and internal approval statuses do not establish that a design is safe, compliant or fit for construction. Responsibility for engineering validation remains with appropriately qualified individuals. Using FrameLytix does not replace the review, approval or seal of a licensed professional engineer where the law requires one. The software is provided "as is", without warranty of any kind, as stated in the [LICENSE](LICENSE).
+
+## Privacy
+
+FrameLytix collects nothing: no accounts, analytics or telemetry, and the app blocks its own network access. What it stores on your computer, and how to remove it, is described in [PRIVACY.md](PRIVACY.md).
+
+## Trademarks
+
+"FrameLytix" is the name of this open-source project. No trademark search or registration has been carried out. Other product names mentioned (such as AutoCAD, SolidWorks and MATLAB) belong to their owners and are used only to describe file compatibility.
 
 ## AI-assisted development
 

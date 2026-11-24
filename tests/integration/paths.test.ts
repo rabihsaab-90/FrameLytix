@@ -2,7 +2,7 @@ import { mkdir, realpath, symlink, writeFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import { isBlockedExtension, isInside, PathSecurityError, resolveInsideRoot } from '../../electron/security/paths';
+import { isBlockedExtension, isBlockedForOpen, isInside, PathSecurityError, resolveInsideRoot } from '../../electron/security/paths';
 import { buildTree } from '../../electron/services/fileService';
 import { makeTempDir, removeTempDir } from './helpers';
 
@@ -81,12 +81,25 @@ describe('resolveInsideRoot', () => {
 
 describe('blocked extensions', () => {
   it('blocks executables and scripts, allows documents and MATLAB .m', () => {
-    for (const n of ['setup.exe', 'RUN.BAT', 'x.ps1', 'a.js', 'b.lnk', 'c.pdf.exe', 'd.exe.', 'e.exe ', 'f.appref-ms', 'g.iso']) {
+    for (const n of [
+      'setup.exe', 'RUN.BAT', 'x.ps1', 'a.js', 'b.lnk', 'c.pdf.exe', 'd.exe.', 'e.exe ', 'f.appref-ms', 'g.iso',
+      'help.chm', 'pkg.msix', 'x.settingcontent-ms', 'disk.vhdx', 'patch.msp', 'helper.wsc',
+      'Installer.pkg', 'Tool.dmg', 'launch.desktop', 'App.AppImage', 'x.search-ms'
+    ]) {
       expect(isBlockedExtension(n), n).toBe(true);
     }
-    for (const n of ['drawing.dwg', 'model.stl', 'calc.m', 'report.pdf', 'data.csv', 'README']) {
+    for (const n of ['drawing.dwg', 'model.stl', 'calc.m', 'report.pdf', 'data.csv', 'README', 'part.step', 'sheet.xlsx', 'notes.txt', 'photo.png']) {
       expect(isBlockedExtension(n), n).toBe(false);
+      expect(isBlockedForOpen(n), n).toBe(false);
     }
+  });
+
+  it('allows importing scripts but never opens them with the system handler', () => {
+    for (const n of ['tool.py', 'loader.PYW', 'calc.pl', 'build.rb', 'x.py.']) {
+      expect(isBlockedExtension(n), n).toBe(false);
+      expect(isBlockedForOpen(n), n).toBe(true);
+    }
+    expect(isBlockedForOpen('setup.exe')).toBe(true);
   });
 });
 
