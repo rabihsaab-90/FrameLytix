@@ -15,7 +15,7 @@ Windows 11 · Node 26.13.1 · npm 11.20 · Electron 45.4.1 · electron-vite 6 ·
 - Requirements, engineering arguments (decision matrix, mandatory constraints, sensitivity, revisions), calculations (KaTeX + restricted parser), evidence, traceability, risks, review, report preview, PDF/HTML/CSV export, export history.
 - Asset import with collision handling, relink, image/SVG/PDF/STL viewers, native-app opening.
 - Demo: pedestrian truss bridge (temp copy, reset, save as new).
-- Docs: README, USER_GUIDE, PORTFOLIO_GUIDE, ARCHITECTURE, PROJECT_FORMAT, OFFLINE_VERIFICATION, CONTRIBUTING, SECURITY, CHANGELOG, THIRD_PARTY_NOTICES; issue/PR templates; CI + release workflows.
+- Docs: README, USER_GUIDE, ARCHITECTURE, PROJECT_FORMAT, OFFLINE_VERIFICATION, CONTRIBUTING, SECURITY, CHANGELOG, THIRD_PARTY_NOTICES; issue/PR templates; CI + release workflows.
 
 ## Test results (local)
 - `npm run lint`, `npm run typecheck`: clean.

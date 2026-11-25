@@ -145,14 +145,6 @@ remove personal information from logs and screenshots before posting.
 
 For security vulnerabilities, do **not** use public issues. Follow the [Security policy](SECURITY.md).
 
-## AI-assisted development
-
-FrameLytix was developed with AI assistance. We value transparency about this. If you use AI tools
-to help prepare a contribution, you are responsible for the result. Review and understand every line
-you submit, run the tests, and be able to explain the design choices in the pull request. Do not
-submit code, text or data that you have not checked, and do not include confidential material in
-prompts.
-
 ## Licence
 
 By contributing, you agree that your contribution is licensed under the MIT License in

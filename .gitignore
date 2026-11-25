@@ -39,10 +39,6 @@ npm-debug.log*
 Thumbs.db
 desktop.ini
 
-# Local Claude Code permission and session files
-.claude/settings.local.json
-.claude/*.local.*
-
 # User-generated engineering projects and private backups (never commit personal data).
 # The bundled sample in samples/ is intentionally tracked.
 /projects/

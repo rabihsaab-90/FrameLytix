@@ -281,7 +281,3 @@ FrameLytix collects nothing: no accounts, analytics or telemetry, and the app bl
 ## Trademarks
 
 "FrameLytix" is the name of this open-source project. No trademark search or registration has been carried out. Other product names mentioned (such as AutoCAD, SolidWorks and MATLAB) belong to their owners and are used only to describe file compatibility.
-
-## AI-assisted development
-
-FrameLytix was built with AI assistance. The author is an engineering student who defined the product's purpose, engineering logic and rules and directed and reviewed the work; the source code was largely written by an AI coding assistant. Automated tests and the documentation describe what the code actually does, but the project has not had an independent professional code or security review.

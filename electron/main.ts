@@ -1,6 +1,6 @@
 /**
  * FrameLytix Electron main process entry.
- * Security model: see CLAUDE.md and shared/types/ipc.ts. All file logic is in services/.
+ * Security model: see SECURITY.md and shared/types/ipc.ts. All file logic is in services/.
  */
 import path from 'node:path';
 import { app, BrowserWindow } from 'electron';
