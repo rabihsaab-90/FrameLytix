@@ -8,7 +8,7 @@
 
 FrameLytix is an offline-first desktop workspace that helps an engineering team keep a design decision connected to the requirements, calculations, drawings and evidence behind it. You record requirements, compare design alternatives with a weighted decision matrix (with pass/fail mandatory constraints kept separate from scoring), document calculations, link everything together, and export a design report. Everything is stored in a normal folder on your own computer. There are no accounts, no cloud services and no network use.
 
-- **Platform:** Windows 10/11 x64 is the primary target. A macOS build is configured but has **not been built or tested**.
+- **Platform:** Windows 10/11 x64 is the primary target. A macOS (Apple silicon) build is included in the release but is **untested and unsigned**.
 - **Status:** 0.1.0 pre-release.
 - **Not certified engineering software.** It documents and supports decisions. It does not analyse structures or check codes. See [Disclaimer](#disclaimer).
 
@@ -80,7 +80,7 @@ All screenshots are of the bundled, fictional sample project (a conceptual pedes
 
 ## Download
 
-> No release has been published yet. Until one is, run FrameLytix from source (see [Quick start from source](#quick-start-from-source)).
+> **Latest release: [FrameLytix v0.1.0](https://github.com/rabihsaab-90/FrameLytix/releases/tag/v0.1.0)** (pre-release). You can also run FrameLytix from source (see [Quick start from source](#quick-start-from-source)).
 
 1. Open the project's **Releases** page: <https://github.com/rabihsaab-90/FrameLytix/releases>.
 2. Download `FrameLytix-Setup-0.1.0-x64.exe` and the matching `.sha256` checksum file.
@@ -96,7 +96,7 @@ All screenshots are of the bundled, fictional sample project (a conceptual pedes
 
 A portable build (`FrameLytix-<version>-win-x64-portable.zip`) may also be attached to a release: extract it anywhere and run `FrameLytix.exe`. The same signing caveats apply.
 
-No macOS download is offered because no macOS build has been produced or tested.
+A macOS build for Apple silicon (`FrameLytix-0.1.0-arm64.dmg`) is attached to the release, but it **has not been tested** and is unsigned, so macOS blocks it by default. Windows is the supported platform.
 
 ## Features
 
@@ -178,7 +178,7 @@ npm run dist:win
 
 The installer is written to `release/FrameLytix-Setup-0.1.0-x64.exe`. It is an unsigned NSIS installer (per-user, lets you choose the install folder). The build never publishes anything.
 
-`npm run dist:mac` must be run on a Mac. It is configured but has never been run or tested.
+`npm run dist:mac` must be run on a Mac. The resulting DMG has not been tested.
 
 ## Architecture
 
@@ -256,7 +256,7 @@ GitHub Actions CI runs on every push (lint, typecheck, tests and build on Window
 
 - No built-in preview for DWG, DXF, STEP, IGES or SolidWorks files. They open in an external application if one is installed.
 - STL files do not store units. You can declare a unit per model, but this only labels dimensions; it does not rescale the model.
-- Installers are unsigned. macOS has not been built or tested.
+- Installers are unsigned. The macOS build has not been tested.
 - **Not certified engineering software.** No structural analysis, no code-compliance checking.
 - No unit conversion. Enter values in consistent units.
 - Revision history is a convenience record. It is **not tamper-proof**; anyone with access to the project file can edit it.
